@@ -38,9 +38,9 @@ const HeroSection: React.FC = () => {
                 href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
+                className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
               >
-                Begin Your Journey <ArrowRight size={20} />
+                Begin Your Journey Through Native American History <ArrowRight size={20} />
               </a>
               
               <a 
