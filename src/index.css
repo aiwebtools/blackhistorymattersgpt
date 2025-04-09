@@ -65,6 +65,11 @@
     @apply text-primary-purple animate-glow;
   }
   
+  /* Adding perspective utility for 3D effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
   .rainbow-text {
     background: linear-gradient(to right, 
       #ff0000, /* Red */
@@ -221,28 +226,33 @@
     transform: scale(1.05);
   }
 
-  /* New dream catcher explosion animation */
-  .animate-dream-catcher-explode {
+  /* Enhanced 3D dream catcher explosion animation */
+  .animate-dream-catcher-explode-3d {
     position: absolute;
-    animation: dream-catcher-explode 1s forwards;
+    animation: dream-catcher-explode-3d 2s forwards;
+    transform-style: preserve-3d;
   }
 
-  @keyframes dream-catcher-explode {
+  @keyframes dream-catcher-explode-3d {
     0% {
       opacity: 0;
-      transform: translate(-50%, -50%) scale(0.2);
+      transform: translate3d(-50%, -50%, 0) scale(0.2) rotate(0deg);
+      filter: brightness(0.5);
     }
-    20% {
+    15% {
       opacity: 1;
+      filter: brightness(1.5);
     }
     100% {
       opacity: 0;
-      transform: 
-        translate(
-          calc(-50% + var(--explosion-x, 0)), 
-          calc(-50% + var(--explosion-y, 0))
-        )
-        scale(var(--explosion-scale, 1));
+      transform: translate3d(
+        calc(-50% + var(--explosion-x, 0)), 
+        calc(-50% + var(--explosion-y, 0)), 
+        var(--explosion-z, 0)
+      ) 
+      scale(var(--explosion-scale, 1)) 
+      rotate(var(--explosion-rotation, 0deg));
+      filter: brightness(0.8);
     }
   }
 
