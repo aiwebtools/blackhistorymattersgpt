@@ -95,12 +95,42 @@ const HowItWorks: React.FC = () => {
             href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="button-glow text-white px-8 py-4 rounded-md font-semibold inline-flex items-center gap-2"
+            className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold inline-flex items-center gap-2 relative overflow-hidden"
+            style={{
+              background: "linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff)",
+              backgroundSize: "400% 100%",
+              animation: "rainbow-shift 6s linear infinite"
+            }}
           >
-            Start Your Time Travel Experience <ChevronRight size={20} />
+            <span className="relative z-10 whitespace-normal">Start Your Native American Time Travel Experience Now</span> <ChevronRight size={20} className="flex-shrink-0" />
           </a>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes rainbow-shift {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+        .rainbow-button-glow {
+          position: relative;
+          box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+        .rainbow-button-glow:hover {
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+          transform: translateY(-2px);
+        }
+        .rainbow-button-glow::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: inherit;
+          filter: blur(8px);
+          opacity: 0.7;
+          z-index: -1;
+        }
+      `}</style>
     </section>
   );
 };
