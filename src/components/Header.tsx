@@ -11,7 +11,7 @@ interface NavLinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;  // Updated to accept an optional event parameter
   rainbow?: boolean;
 }
 
