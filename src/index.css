@@ -166,7 +166,7 @@
     );
     background-size: 400% 400%;
     animation: rainbow-background 3s ease infinite;
-    @apply text-black transition-all duration-300;
+    @apply text-white transition-all duration-300;
   }
   
   .rainbow-button-glow:hover {
