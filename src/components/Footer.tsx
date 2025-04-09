@@ -1,11 +1,23 @@
 
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-charcoal/70 border-t border-primary-purple/20 py-12 mt-16">
       <div className="container mx-auto px-4">
+        <div className="w-full flex justify-center mb-6">
+          <a 
+            href="https://time-machine-gpt.lovable.app/?via=aiwebtools"
+            className="button-glow text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            You May Also Like TIME MACHINE GPT <ExternalLink size={16} />
+          </a>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold text-primary-purple mb-4">Navigation</h3>
@@ -17,17 +29,22 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Speak to Geronimo <ExternalLink size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-light-gray hover:text-primary-purple transition-colors">
-                  FAQ
+                  Speak to Geronimo and Experience Native American History like Never Before <ExternalLink size={14} />
                 </a>
               </li>
               <li>
                 <a href="#disclaimer" className="text-light-gray hover:text-primary-purple transition-colors">
                   Disclaimer
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://time-machine-gpt.lovable.app/?via=aiwebtools" 
+                  className="text-light-gray hover:text-primary-purple transition-colors flex items-center gap-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Try Standard Time Machine GPT <ExternalLink size={14} />
                 </a>
               </li>
               <li>
