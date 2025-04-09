@@ -27,7 +27,7 @@ const DreamCatcherExplosion: React.FC<DreamCatcherExplosionProps> = ({
   useEffect(() => {
     if (isActive) {
       // Generate more dream catchers for a more dramatic explosion effect
-      const numberOfDreamCatchers = 40; // Increased from 20
+      const numberOfDreamCatchers = 60; // Increased from 40 to 60 for more density
       const newDreamCatchers = [];
       
       const sizes: Array<'sm' | 'md' | 'lg'> = ['sm', 'md', 'lg'];
@@ -39,23 +39,23 @@ const DreamCatcherExplosion: React.FC<DreamCatcherExplosionProps> = ({
           id: i,
           size: sizes[Math.floor(Math.random() * sizes.length)],
           color: colors[Math.floor(Math.random() * colors.length)],
-          // More extreme x/y values for wider explosion
-          x: `${Math.random() * 200 - 100}%`,
-          y: `${Math.random() * 200 - 100}%`,
-          // Add z movement to create depth
-          z: `${Math.random() * 500}px`,
-          delay: `${Math.random() * 0.5}s`,
-          scale: `${0.5 + Math.random() * 1.5}`, // Larger possible scale
-          rotation: `${Math.random() * 720 - 360}deg` // Add rotation for more dynamic movement
+          // Even more extreme x/y values for wider explosion
+          x: `${Math.random() * 300 - 150}%`, // Increased range from 200 to 300
+          y: `${Math.random() * 300 - 150}%`, // Increased range from 200 to 300
+          // Add even deeper z movement
+          z: `${Math.random() * 1000}px`, // Increased from 500 to 1000 for more depth
+          delay: `${Math.random() * 0.4}s`, // Slightly faster to start
+          scale: `${1 + Math.random() * 2}`, // Larger scale for more visibility
+          rotation: `${Math.random() * 1080 - 540}deg` // More rotation for dynamic effect (3 full rotations)
         });
       }
       
       setDreamCatchers(newDreamCatchers);
       
-      // Increased timeout even more for a longer, more dramatic effect
+      // Increased timeout for a longer effect
       const timer = setTimeout(() => {
         onComplete();
-      }, 2500); // Increased to 2.5 seconds
+      }, 2800); // Increased from 2500ms to 2800ms
       
       return () => clearTimeout(timer);
     }
@@ -65,14 +65,17 @@ const DreamCatcherExplosion: React.FC<DreamCatcherExplosionProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden perspective-1000">
-      {/* Dramatic flash of light when explosion starts */}
+      {/* Initial bright flash when explosion starts */}
       <div className={`absolute inset-0 bg-white ${isActive ? 'animate-flash' : ''}`}></div>
       
-      {/* Dark overlay that fades in for contrast */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in"></div>
+      {/* Dark overlay with more transparency for better visibility of dream catchers */}
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-md animate-fade-in"></div>
       
-      {/* Rainbow glow in the center */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 blur-xl opacity-70 animate-pulse-rainbow"></div>
+      {/* Much larger, brighter rainbow glow in the center */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 blur-2xl opacity-90 animate-pulse-rainbow"></div>
+      
+      {/* Additional pulsing light source */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-white blur-xl opacity-80 animate-pulse"></div>
       
       {dreamCatchers.map((dc) => (
         <div
@@ -86,19 +89,24 @@ const DreamCatcherExplosion: React.FC<DreamCatcherExplosionProps> = ({
             '--explosion-scale': dc.scale,
             '--explosion-rotation': dc.rotation,
             animationDelay: dc.delay,
+            // Add a filter to make each dream catcher more visible
+            filter: 'brightness(1.5) contrast(1.2)',
           } as React.CSSProperties}
         >
           <DreamCatcher
             size={dc.size}
             color={dc.color}
             className={cn(
-              "opacity-0 animate-glow-intense",
+              "opacity-0 animate-glow-extreme",
               isActive && "animate-fade-in"
             )}
             animate={false} // Disable the default float animation
           />
         </div>
       ))}
+      
+      {/* Light rays emanating from center */}
+      <div className="absolute inset-0 bg-rays opacity-70"></div>
     </div>
   );
 };

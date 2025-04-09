@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,7 +64,6 @@
     @apply text-primary-purple animate-glow;
   }
   
-  /* Adding perspective utility for 3D effects */
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -226,10 +224,9 @@
     transform: scale(1.05);
   }
 
-  /* Enhanced 3D dream catcher explosion animation */
   .animate-dream-catcher-explode-3d {
     position: absolute;
-    animation: dream-catcher-explode-3d 2s forwards;
+    animation: dream-catcher-explode-3d 2.5s forwards;
     transform-style: preserve-3d;
   }
 
@@ -331,6 +328,36 @@
     }
     100% {
       background-position: 100% 50%;
+    }
+  }
+
+  .bg-rays {
+    background-image: repeating-conic-gradient(from 0deg, 
+      rgba(255, 255, 255, 0) 0deg, 
+      rgba(255, 255, 255, 0) 15deg, 
+      rgba(255, 255, 255, 0.3) 16deg, 
+      rgba(255, 255, 255, 0) 17deg, 
+      rgba(255, 255, 255, 0) 29deg,
+      rgba(255, 255, 255, 0.3) 30deg,
+      rgba(255, 255, 255, 0) 31deg
+    );
+    background-size: 100% 100%;
+    background-position: center center;
+    animation: rotate-rays 10s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes rotate-rays {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
     }
   }
 }

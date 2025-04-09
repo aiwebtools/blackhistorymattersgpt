@@ -124,38 +124,54 @@ export default {
 						transform: 'translate(calc(-50% + var(--explosion-x, 0)), calc(-50% + var(--explosion-y, 0))) scale(var(--explosion-scale, 1))'
 					}
 				},
-				// New 3D animation
+				// Enhanced 3D animation
 				'dream-catcher-explode-3d': {
 					'0%': {
 						opacity: '0',
 						transform: 'translate3d(-50%, -50%, 0) scale(0.2) rotate(0deg)',
-						filter: 'brightness(0.5)'
+						filter: 'brightness(0.5) drop-shadow(0 0 0 rgba(255, 255, 255, 0))'
 					},
-					'15%': {
+					'10%': {
 						opacity: '1',
-						filter: 'brightness(1.5)'
+						filter: 'brightness(2) drop-shadow(0 0 10px rgba(255, 255, 255, 1))'
+					},
+					'30%': {
+						opacity: '1',
+						filter: 'brightness(1.8) drop-shadow(0 0 20px rgba(255, 255, 255, 0.8))'
 					},
 					'100%': {
 						opacity: '0',
 						transform: 'translate3d(calc(-50% + var(--explosion-x, 0)), calc(-50% + var(--explosion-y, 0)), var(--explosion-z, 0)) scale(var(--explosion-scale, 1)) rotate(var(--explosion-rotation, 0deg))',
-						filter: 'brightness(0.8)'
+						filter: 'brightness(0.8) drop-shadow(0 0 5px rgba(255, 255, 255, 0))'
 					}
 				},
 				// Flash animation for initial light burst
 				'flash': {
-					'0%': { opacity: '0.9' },
+					'0%': { opacity: '1' },
 					'25%': { opacity: '0' },
 					'100%': { opacity: '0' }
 				},
-				// Rainbow pulse animation
+				// Rainbow pulse animation with more intensity
 				'pulse-rainbow': {
 					'0%, 100%': { 
 						transform: 'scale(1)',
 						opacity: '0.7'
 					},
 					'50%': { 
-						transform: 'scale(1.5)', 
+						transform: 'scale(1.8)', // Larger scale
 						opacity: '0.9'
+					}
+				},
+				// Extra intense glow for dream catchers
+				'glow-extreme': {
+					'0%': { 
+						filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 20px rgba(155, 135, 245, 0.9))'
+					},
+					'50%': { 
+						filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(155, 135, 245, 1))'
+					},
+					'100%': { 
+						filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 20px rgba(155, 135, 245, 0.9))'
 					}
 				},
 				// Intense glow for dream catchers
@@ -166,6 +182,11 @@ export default {
 					'50%': { 
 						filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 1)) drop-shadow(0 0 30px rgba(155, 135, 245, 1))'
 					}
+				},
+				// Light rays animation
+				'rotate-rays': {
+					'0%': { transform: 'translate(-50%, -50%) rotate(0deg)' },
+					'100%': { transform: 'translate(-50%, -50%) rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -176,15 +197,20 @@ export default {
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
 				'fade-in': 'fade-in 0.3s ease-in forwards',
 				'dream-catcher-explode': 'dream-catcher-explode 1s forwards',
-				// New animations
-				'dream-catcher-explode-3d': 'dream-catcher-explode-3d 2s forwards',
+				// Enhanced animations
+				'dream-catcher-explode-3d': 'dream-catcher-explode-3d 2.5s forwards', // Longer animation
 				'flash': 'flash 0.5s ease-out forwards',
-				'pulse-rainbow': 'pulse-rainbow 2s ease-in-out infinite',
-				'glow-intense': 'glow-intense 1s ease-in-out infinite'
+				'pulse-rainbow': 'pulse-rainbow 1.5s ease-in-out infinite', // Faster pulse
+				'glow-extreme': 'glow-extreme 0.8s ease-in-out infinite', // Faster, more intense glow
+				'glow-intense': 'glow-intense 1s ease-in-out infinite',
+				'rotate-rays': 'rotate-rays 10s linear infinite'
 			},
 			// Add perspective for 3D effect
 			perspective: {
 				'1000': '1000px',
+			},
+			backgroundImage: {
+				'rays': 'radial-gradient(circle at center, transparent 0%, transparent 50%, rgba(255,255,255,0.2) 50%, transparent 52%, transparent 100%), radial-gradient(circle at center, transparent 0%, transparent 52%, rgba(255,255,255,0.2) 52%, transparent 54%, transparent 100%), radial-gradient(circle at center, transparent 0%, transparent 54%, rgba(255,255,255,0.2) 54%, transparent 56%, transparent 100%), radial-gradient(circle at center, transparent 0%, transparent 56%, rgba(255,255,255,0.2) 56%, transparent 58%, transparent 100%)',
 			}
 		}
 	},
