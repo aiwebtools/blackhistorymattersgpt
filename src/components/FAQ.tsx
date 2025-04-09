@@ -47,19 +47,21 @@ const FAQ: React.FC = () => {
         </p>
         
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {faqItems.map((item, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="rainbow-cyberpunk-card mb-4 overflow-hidden"
+                className="border-none"
               >
-                <AccordionTrigger className="text-left px-6 py-4 rainbow-text font-semibold">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 text-light-gray/80">
-                  {item.answer}
-                </AccordionContent>
+                <div className="rainbow-cyberpunk-card">
+                  <AccordionTrigger className="text-left px-6 py-4 rainbow-text font-semibold w-full">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="bg-black/60 px-6 py-4 text-light-gray/80">
+                    <div className="pb-2">{item.answer}</div>
+                  </AccordionContent>
+                </div>
               </AccordionItem>
             ))}
           </Accordion>
