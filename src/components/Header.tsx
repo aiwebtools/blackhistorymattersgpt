@@ -60,7 +60,7 @@ const Header: React.FC = () => {
   };
   
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-4 shadow-md">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="w-full md:w-auto flex justify-between items-center">
           <div className="mx-auto md:mx-0 max-w-[300px] md:max-w-none">

@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col overflow-hidden">
       <Header />
-      <main className="flex-grow relative">
+      <main className="flex-grow relative mt-24">
         {/* Decorative Dream Catchers */}
         <DreamCatcher 
           size="lg" 
