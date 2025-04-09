@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-charcoal/70 border-t border-primary-purple/20 py-12 mt-16">
+    <footer className="bg-black border-t border-primary-purple/20 py-12 mt-16">
       <div className="container mx-auto px-4">
         <div className="w-full flex justify-center mb-6">
           <a 

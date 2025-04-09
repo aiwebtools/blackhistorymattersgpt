@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +34,7 @@
   }
   
   body {
-    @apply bg-dark-purple text-foreground antialiased;
+    @apply bg-black text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
@@ -80,6 +81,6 @@
   }
   
   .cyberpunk-card {
-    @apply bg-charcoal/40 backdrop-blur-md border border-primary-purple/30 rounded-lg overflow-hidden;
+    @apply bg-black/40 backdrop-blur-md border border-primary-purple/30 rounded-lg overflow-hidden;
   }
 }

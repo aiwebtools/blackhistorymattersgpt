@@ -69,8 +69,9 @@ export default {
 				'secondary-purple': '#7E69AB',
 				'vivid-purple': '#8B5CF6',
 				'bright-blue': '#0FA0CE',
-				'charcoal': '#403E43',
+				'charcoal': '#000000',
 				'light-gray': '#C8C8C9',
+				'black': '#000000',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

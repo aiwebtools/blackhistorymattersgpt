@@ -18,7 +18,7 @@ const VideoSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-charcoal/30">
+    <section className="py-16 bg-black">
       <div className="container mx-auto px-4">
         <div className="relative w-full max-w-4xl mx-auto aspect-video">
           <div className="cyberpunk-card p-1 h-full">
