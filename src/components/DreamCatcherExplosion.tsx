@@ -45,10 +45,10 @@ const DreamCatcherExplosion: React.FC<DreamCatcherExplosionProps> = ({
       
       setDreamCatchers(newDreamCatchers);
       
-      // Trigger onComplete after animation finishes
+      // Increased timeout to give the animation more time to be visible
       const timer = setTimeout(() => {
         onComplete();
-      }, 1000); // Adjust timing based on animation duration
+      }, 2000); // Increased from 1000ms to 2000ms
       
       return () => clearTimeout(timer);
     }
@@ -57,7 +57,7 @@ const DreamCatcherExplosion: React.FC<DreamCatcherExplosionProps> = ({
   if (!isActive) return null;
 
   return (
-    <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden bg-black/30 backdrop-blur-sm">
       {dreamCatchers.map((dc) => (
         <div
           key={dc.id}

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import DreamCatcher from './DreamCatcher';
@@ -52,9 +51,7 @@ const HeroSection: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 mb-12">
               <a 
-                href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="#" 
                 className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
                 onClick={handleJourneyButtonClick}
               >
