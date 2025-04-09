@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import DreamCatcher from './DreamCatcher';
 
 const HeroSection: React.FC = () => {
   return (
@@ -10,6 +11,12 @@ const HeroSection: React.FC = () => {
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary-purple/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-vivid-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-40 right-20 w-48 h-48 bg-bright-blue/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+      </div>
+
+      {/* Dream catchers */}
+      <div className="hidden md:block">
+        <DreamCatcher size="sm" color="purple" className="absolute top-10 left-10 z-10" />
+        <DreamCatcher size="md" color="blue" className="absolute bottom-10 right-10 z-10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

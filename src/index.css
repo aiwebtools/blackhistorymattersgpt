@@ -83,4 +83,14 @@
   .cyberpunk-card {
     @apply bg-black/40 backdrop-blur-md border border-primary-purple/30 rounded-lg overflow-hidden;
   }
+  
+  .dreamcatcher {
+    @apply transition-all duration-300;
+    transform-origin: center center;
+  }
+  
+  .dreamcatcher:hover {
+    filter: drop-shadow(0 0 8px #9b87f5);
+    transform: scale(1.05);
+  }
 }
