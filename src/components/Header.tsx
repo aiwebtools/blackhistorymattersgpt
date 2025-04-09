@@ -25,7 +25,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
         rel="noopener noreferrer"
         className={cn(
           "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2 text-sm md:text-base whitespace-normal",
-          rainbow && "rainbow-button-glow rounded-md font-semibold text-center",
+          rainbow && "rainbow-button-glow text-black rounded-md font-semibold text-center",
           className
         )}
         onClick={onClick}
@@ -40,7 +40,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
       href={href}
       className={cn(
         "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2 text-sm md:text-base whitespace-normal",
-        rainbow && "rainbow-button-glow rounded-md font-semibold text-center",
+        rainbow && "rainbow-button-glow text-black rounded-md font-semibold text-center",
         className
       )}
       onClick={onClick}
