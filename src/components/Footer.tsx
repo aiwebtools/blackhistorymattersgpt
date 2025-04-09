@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
+import DreamCatcherExplosion from './DreamCatcherExplosion';
 
 interface FooterLinkProps {
   href: string;
@@ -10,9 +11,10 @@ interface FooterLinkProps {
   className?: string;
   external?: boolean;
   rainbow?: boolean;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, external = false, rainbow = false }) => {
+const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, external = false, rainbow = false, onClick }) => {
   return (
     <a 
       href={href}
@@ -25,6 +27,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, exte
       )}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
+      onClick={onClick}
     >
       {children}
       {external && <ExternalLink size={14} />}
@@ -33,8 +36,23 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, exte
 };
 
 const Footer: React.FC = () => {
+  const [showExplosion, setShowExplosion] = useState(false);
+  
+  const handleExplosionClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowExplosion(true);
+  };
+  
+  const handleExplosionComplete = () => {
+    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny', '_blank', 'noopener,noreferrer');
+    setShowExplosion(false);
+  };
+  
   return (
     <footer className="bg-black border-t border-primary-purple/20 py-12 mt-16">
+      {/* Dream catcher explosion effect */}
+      <DreamCatcherExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+      
       <div className="container mx-auto px-4">
         <div className="w-full flex justify-center mb-6">
           <FooterLink 
@@ -57,6 +75,7 @@ const Footer: React.FC = () => {
                   external
                   rainbow
                   className="max-w-[300px] md:max-w-none"
+                  onClick={handleExplosionClick}
                 >
                   Speak to Geronimo
                 </FooterLink>

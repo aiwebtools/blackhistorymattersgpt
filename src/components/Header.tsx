@@ -5,6 +5,7 @@ import Logo from './Logo';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import DreamCatcherExplosion from './DreamCatcherExplosion';
 
 interface NavLinkProps {
   href: string;
@@ -52,6 +53,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showExplosion, setShowExplosion] = useState(false);
   const isMobile = useIsMobile();
 
   const toggleMenu = () => {
@@ -62,8 +64,21 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
   
+  const handleExplosionClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowExplosion(true);
+  };
+  
+  const handleExplosionComplete = () => {
+    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny', '_blank', 'noopener,noreferrer');
+    setShowExplosion(false);
+  };
+  
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-4 shadow-md">
+      {/* Dream catcher explosion effect */}
+      <DreamCatcherExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+      
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="w-full md:w-auto flex justify-between items-center">
           <div className="mx-auto md:mx-0 max-w-[300px] md:max-w-none">
@@ -87,7 +102,10 @@ const Header: React.FC = () => {
           <NavLink 
             href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
             className="rainbow-button-glow rounded-md font-semibold text-center max-w-[320px] md:max-w-none"
-            onClick={closeMenu}
+            onClick={(e) => {
+              closeMenu();
+              handleExplosionClick(e);
+            }}
           >
             Speak to Geronimo
           </NavLink>
