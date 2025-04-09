@@ -2,20 +2,49 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
+import { cn } from '@/lib/utils';
+
+interface FooterLinkProps {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  external?: boolean;
+  rainbow?: boolean;
+}
+
+const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, external = false, rainbow = false }) => {
+  return (
+    <a 
+      href={href}
+      className={cn(
+        "transition-all duration-300 flex items-center gap-1",
+        rainbow 
+          ? "rainbow-button-glow px-4 py-2 rounded-full font-semibold text-white hover:scale-105" 
+          : "text-light-gray hover:text-primary-purple",
+        className
+      )}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+    >
+      {children}
+      {external && <ExternalLink size={14} />}
+    </a>
+  );
+};
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black border-t border-primary-purple/20 py-12 mt-16">
       <div className="container mx-auto px-4">
         <div className="w-full flex justify-center mb-6">
-          <a 
+          <FooterLink 
             href="https://time-machine-gpt.lovable.app/?via=aiwebtools"
             className="button-glow text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2"
-            target="_blank"
-            rel="noopener noreferrer"
+            external
+            rainbow
           >
-            You May Also Like TIME MACHINE GPT <ExternalLink size={16} />
-          </a>
+            You May Also Like TIME MACHINE GPT
+          </FooterLink>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -23,39 +52,36 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold text-primary-purple mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny" 
-                  className="text-light-gray hover:text-primary-purple transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <FooterLink 
+                  href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
+                  external
+                  rainbow
                 >
-                  Speak to Geronimo and Experience Native American History like Never Before <ExternalLink size={14} />
-                </a>
+                  Speak to Geronimo and Experience Native American History like Never Before
+                </FooterLink>
               </li>
               <li>
-                <a href="#disclaimer" className="text-light-gray hover:text-primary-purple transition-colors">
+                <FooterLink href="#disclaimer" rainbow>
                   Disclaimer
-                </a>
+                </FooterLink>
               </li>
               <li>
-                <a 
+                <FooterLink 
                   href="https://time-machine-gpt.lovable.app/?via=aiwebtools" 
-                  className="text-light-gray hover:text-primary-purple transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  external
+                  rainbow
                 >
-                  Try Standard Time Machine GPT <ExternalLink size={14} />
-                </a>
+                  Try Standard Time Machine GPT
+                </FooterLink>
               </li>
               <li>
-                <a 
+                <FooterLink 
                   href="https://www.aiwebtools.ai" 
-                  className="text-light-gray hover:text-primary-purple transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  external
+                  rainbow
                 >
-                  More AI Tools <ExternalLink size={14} />
-                </a>
+                  More AI Tools
+                </FooterLink>
               </li>
             </ul>
           </div>
@@ -64,24 +90,20 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold text-primary-purple mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a 
+                <FooterLink 
                   href="https://openai.com/policies/privacy-policy/" 
-                  className="text-light-gray hover:text-primary-purple transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  external
                 >
-                  Privacy Policy <ExternalLink size={14} />
-                </a>
+                  Privacy Policy
+                </FooterLink>
               </li>
               <li>
-                <a 
+                <FooterLink 
                   href="https://aiwebtools.ai/terms-of-services" 
-                  className="text-light-gray hover:text-primary-purple transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  external
                 >
-                  Terms of Service <ExternalLink size={14} />
-                </a>
+                  Terms of Service
+                </FooterLink>
               </li>
             </ul>
           </div>
@@ -90,20 +112,14 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold text-primary-purple mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="tel:+14758008096" 
-                  className="text-light-gray hover:text-primary-purple transition-colors"
-                >
+                <FooterLink href="tel:+14758008096">
                   (475) 800-8096
-                </a>
+                </FooterLink>
               </li>
               <li>
-                <a 
-                  href="mailto:Contact@ai-webtools.com" 
-                  className="text-light-gray hover:text-primary-purple transition-colors"
-                >
+                <FooterLink href="mailto:Contact@ai-webtools.com">
                   Contact@ai-webtools.com
-                </a>
+                </FooterLink>
               </li>
             </ul>
           </div>
@@ -114,14 +130,14 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} Native American History Time Machine Of Destiny. All rights reserved.
           </p>
           
-          <a
+          <FooterLink
             href="https://www.aiwebtools.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 md:mt-0 button-glow text-white px-6 py-2 rounded-full font-semibold flex items-center gap-2"
+            external
+            rainbow
+            className="mt-4 md:mt-0"
           >
-            More AI Tools <ExternalLink size={16} />
-          </a>
+            More AI Tools
+          </FooterLink>
         </div>
       </div>
     </footer>

@@ -11,9 +11,10 @@ interface NavLinkProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  rainbow?: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, rainbow = false }) => {
   const isExternal = href.startsWith('http');
   
   if (isExternal) {
@@ -24,6 +25,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick })
         rel="noopener noreferrer"
         className={cn(
           "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2",
+          rainbow && "rainbow-button-glow rounded-md font-semibold text-center",
           className
         )}
         onClick={onClick}
@@ -38,6 +40,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick })
       href={href}
       className={cn(
         "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2",
+        rainbow && "rainbow-button-glow rounded-md font-semibold text-center",
         className
       )}
       onClick={onClick}
@@ -88,11 +91,11 @@ const Header: React.FC = () => {
           >
             Speak to Geronimo and Experience Native American History like Never Before
           </NavLink>
-          <NavLink href="#disclaimer" onClick={closeMenu}>Disclaimer</NavLink>
-          <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={closeMenu}>
+          <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
+          <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={closeMenu} rainbow>
             Try Standard Time Machine GPT
           </NavLink>
-          <NavLink href="https://www.aiwebtools.ai" onClick={closeMenu}>More AI Tools</NavLink>
+          <NavLink href="https://www.aiwebtools.ai" onClick={closeMenu} rainbow>More AI Tools</NavLink>
         </nav>
       </div>
     </header>
