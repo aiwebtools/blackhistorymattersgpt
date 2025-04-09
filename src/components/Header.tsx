@@ -106,6 +106,7 @@ const Header: React.FC = () => {
           >
             Speak to Geronimo
           </NavLink>
+          <NavLink href="#faq" onClick={closeMenu} rainbow>FAQ</NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
           <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={closeMenu} rainbow>
             Time Machine GPT
