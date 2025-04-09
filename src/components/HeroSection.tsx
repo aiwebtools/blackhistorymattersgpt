@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
           <div className="w-full md:w-1/2 mt-10 md:mt-0">
             <div className="relative w-full aspect-video cyberpunk-card p-2">
               <iframe
-                src="https://www.youtube.com/embed/jVFTGCeuNSM?autoplay=1&mute=0&vq=hd1080&rel=0"
+                src="https://www.youtube.com/embed/jVFTGCeuNSM?autoplay=1&mute=0&vq=hd1080&rel=0&enablejsapi=1"
                 className="w-full h-full"
                 title="Native American History Time Machine Of Destiny"
                 frameBorder="0"
