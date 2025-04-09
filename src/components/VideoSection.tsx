@@ -20,10 +20,6 @@ const VideoSection: React.FC = () => {
   return (
     <section className="py-16 bg-charcoal/30">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-glow mb-12">
-          Watch the Cherokee Chief of Destiny in Action
-        </h2>
-        
         <div className="relative w-full max-w-4xl mx-auto aspect-video">
           <div className="cyberpunk-card p-1 h-full">
             <iframe
