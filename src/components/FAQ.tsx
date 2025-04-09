@@ -52,12 +52,12 @@ const FAQ: React.FC = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="rainbow-cyberpunk-card mb-4"
+                className="rainbow-cyberpunk-card mb-4 overflow-hidden"
               >
                 <AccordionTrigger className="text-left px-6 py-4 rainbow-text font-semibold">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-light-gray/80">
+                <AccordionContent className="px-6 text-light-gray/80">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
