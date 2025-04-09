@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
@@ -17,7 +16,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, exte
     <a 
       href={href}
       className={cn(
-        "transition-all duration-300 flex items-center gap-1",
+        "transition-all duration-300 flex items-center gap-1 text-sm md:text-base whitespace-normal",
         rainbow 
           ? "rainbow-button-glow px-4 py-2 rounded-full font-semibold text-white hover:scale-105" 
           : "text-light-gray hover:text-primary-purple",
@@ -39,11 +38,11 @@ const Footer: React.FC = () => {
         <div className="w-full flex justify-center mb-6">
           <FooterLink 
             href="https://time-machine-gpt.lovable.app/?via=aiwebtools"
-            className="button-glow text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2"
+            className="button-glow text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 max-w-[300px] md:max-w-none text-center justify-center"
             external
             rainbow
           >
-            You May Also Like TIME MACHINE GPT
+            TIME MACHINE GPT
           </FooterLink>
         </div>
         
@@ -56,8 +55,9 @@ const Footer: React.FC = () => {
                   href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
                   external
                   rainbow
+                  className="max-w-[300px] md:max-w-none"
                 >
-                  Speak to Geronimo and Experience Native American History like Never Before
+                  Speak to Geronimo
                 </FooterLink>
               </li>
               <li>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                   external
                   rainbow
                 >
-                  Try Standard Time Machine GPT
+                  Time Machine GPT
                 </FooterLink>
               </li>
               <li>

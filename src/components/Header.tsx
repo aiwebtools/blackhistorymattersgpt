@@ -24,7 +24,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2",
+          "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2 text-sm md:text-base whitespace-normal",
           rainbow && "rainbow-button-glow rounded-md font-semibold text-center",
           className
         )}
@@ -39,7 +39,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
     <a 
       href={href}
       className={cn(
-        "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2",
+        "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2 text-sm md:text-base whitespace-normal",
         rainbow && "rainbow-button-glow rounded-md font-semibold text-center",
         className
       )}
@@ -86,14 +86,14 @@ const Header: React.FC = () => {
         )}>
           <NavLink 
             href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
-            className="rainbow-button-glow rounded-md font-semibold text-center"
+            className="rainbow-button-glow rounded-md font-semibold text-center max-w-[320px] md:max-w-none"
             onClick={closeMenu}
           >
-            Speak to Geronimo and Experience Native American History like Never Before
+            Speak to Geronimo
           </NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
           <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={closeMenu} rainbow>
-            Try Standard Time Machine GPT
+            Time Machine GPT
           </NavLink>
           <NavLink href="https://www.aiwebtools.ai" onClick={closeMenu} rainbow>More AI Tools</NavLink>
         </nav>

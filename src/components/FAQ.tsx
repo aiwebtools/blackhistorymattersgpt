@@ -1,11 +1,5 @@
 
 import React from 'react';
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from '@/components/ui/accordion';
 
 const FAQ: React.FC = () => {
   const faqItems = [
@@ -46,25 +40,17 @@ const FAQ: React.FC = () => {
           Find answers to common questions about the Native American History Time Machine of Destiny.
         </p>
         
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqItems.map((item, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border-none"
-              >
-                <div className="rainbow-cyberpunk-card">
-                  <AccordionTrigger className="text-left px-6 py-4 rainbow-text font-semibold w-full">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="bg-black/60 px-6 py-4 text-light-gray/80">
-                    <div className="pb-2">{item.answer}</div>
-                  </AccordionContent>
-                </div>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="max-w-3xl mx-auto grid gap-6">
+          {faqItems.map((item, index) => (
+            <div key={index} className="rainbow-cyberpunk-card overflow-hidden">
+              <div className="px-6 py-4 rainbow-text font-semibold">
+                {item.question}
+              </div>
+              <div className="bg-black/60 px-6 py-4 text-light-gray/80">
+                {item.answer}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
