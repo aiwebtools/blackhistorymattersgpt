@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -70,12 +69,14 @@
   }
   
   .dreamcatcher-border {
-    @apply border-2 border-primary-purple/30 rounded-full p-1 relative;
+    @apply border-2 border-primary-purple/50 rounded-lg p-1 relative overflow-hidden;
+    box-shadow: 0 0 15px rgba(155, 135, 245, 0.3);
   }
   
   .dreamcatcher-border::before {
     content: "";
-    @apply absolute inset-0 border border-secondary-purple/20 rounded-full;
+    @apply absolute inset-0 border border-secondary-purple/30 rounded-lg;
+    background: radial-gradient(circle at center, rgba(155, 135, 245, 0.1) 0%, transparent 70%);
   }
   
   .cyberpunk-card {

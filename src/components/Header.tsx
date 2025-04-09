@@ -61,13 +61,16 @@ const Header: React.FC = () => {
   
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-dark-purple/80 border-b border-primary-purple/20 py-4">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="w-full md:w-auto mb-4 md:mb-0 flex justify-between items-center">
-          <Logo className="scale-75 md:scale-100" />
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <div className="w-full md:w-auto flex justify-between items-center">
+          <div className="mx-auto md:mx-0 max-w-[300px] md:max-w-none">
+            <Logo className="transform scale-90 md:scale-100" />
+          </div>
           {isMobile && (
             <button 
-              className="text-light-gray p-2 focus:outline-none" 
+              className="text-light-gray absolute right-4 top-4 p-2 focus:outline-none" 
               onClick={toggleMenu}
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -80,7 +83,7 @@ const Header: React.FC = () => {
         )}>
           <NavLink 
             href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
-            className="button-glow text-white rounded-md font-semibold"
+            className="button-glow text-white rounded-md font-semibold text-center"
             onClick={closeMenu}
           >
             Speak to Geronimo and Experience Native American History like Never Before
