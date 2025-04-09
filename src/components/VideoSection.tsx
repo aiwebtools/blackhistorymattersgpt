@@ -5,13 +5,12 @@ const VideoSection: React.FC = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    // Set YouTube parameters for autoplay and unmuted playback
+    // Set YouTube parameters for autoplay and quality
     const embedUrl = new URL('https://www.youtube.com/embed/jVFTGCeuNSM');
     embedUrl.searchParams.append('autoplay', '1');
     embedUrl.searchParams.append('mute', '0');
     embedUrl.searchParams.append('vq', 'hd1080');
     embedUrl.searchParams.append('rel', '0');
-    embedUrl.searchParams.append('enablejsapi', '1');
     
     if (iframeRef.current) {
       iframeRef.current.src = embedUrl.toString();
