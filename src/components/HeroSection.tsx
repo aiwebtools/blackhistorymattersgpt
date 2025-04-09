@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import DreamCatcher from './DreamCatcher';
@@ -46,7 +47,7 @@ const HeroSection: React.FC = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-10">
-              Experience immersive time travel to any era of Native American history with the Geronimo Chief of Rainbow Apache Destiny as your guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
+              Experience immersive time travel to any era of Native American history with Geronimo, Chief of Rainbow Apache Destiny as your guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 mb-12">
