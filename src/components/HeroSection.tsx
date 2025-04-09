@@ -6,7 +6,7 @@ import VideoSection from './VideoSection';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-16 md:py-24 mt-16 md:mt-20 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary-purple/10 rounded-full blur-3xl animate-float"></div>
