@@ -83,7 +83,7 @@ const Header: React.FC = () => {
         )}>
           <NavLink 
             href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
-            className="button-glow text-white rounded-md font-semibold text-center"
+            className="rainbow-button-glow rounded-md font-semibold text-center"
             onClick={closeMenu}
           >
             Speak to Geronimo and Experience Native American History like Never Before

@@ -65,13 +65,140 @@
     @apply text-primary-purple animate-glow;
   }
   
+  .rainbow-text {
+    background: linear-gradient(to right, 
+      #ff0000, /* Red */
+      #ff7f00, /* Orange */
+      #ffff00, /* Yellow */
+      #00ff00, /* Green */
+      #0000ff, /* Blue */
+      #4b0082, /* Indigo */
+      #9400d3, /* Violet */
+      #ff0000  /* Back to red for seamless loop */
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text-animation 6s linear infinite;
+  }
+  
+  .rainbow-text-glow {
+    background: linear-gradient(to right, 
+      #ff0000, /* Red */
+      #ff7f00, /* Orange */
+      #ffff00, /* Yellow */
+      #00ff00, /* Green */
+      #0000ff, /* Blue */
+      #4b0082, /* Indigo */
+      #9400d3, /* Violet */
+      #ff0000  /* Back to red for seamless loop */
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text-animation 6s linear infinite;
+    text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .rainbow-cyberpunk-card {
+    @apply bg-black/40 backdrop-blur-md border rounded-lg overflow-hidden;
+    position: relative;
+    border-image: linear-gradient(
+      45deg,
+      #ff0000, /* Red */
+      #ff7f00, /* Orange */
+      #ffff00, /* Yellow */
+      #00ff00, /* Green */
+      #0000ff, /* Blue */
+      #4b0082, /* Indigo */
+      #9400d3, /* Violet */
+      #ff0000  /* Back to red for seamless loop */
+    ) 1;
+    animation: border-position 3s linear infinite;
+  }
+  
+  .rainbow-cyberpunk-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      45deg,
+      #ff0000, /* Red */
+      #ff7f00, /* Orange */
+      #ffff00, /* Yellow */
+      #00ff00, /* Green */
+      #0000ff, /* Blue */
+      #4b0082, /* Indigo */
+      #9400d3, /* Violet */
+      #ff0000  /* Back to red for seamless loop */
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
   .button-glow {
     @apply bg-primary-purple hover:bg-vivid-purple transition-all duration-300 animate-pulse-glow;
+  }
+  
+  .rainbow-button-glow {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 0, 0, 0.7),
+      rgba(255, 127, 0, 0.7),
+      rgba(255, 255, 0, 0.7),
+      rgba(0, 255, 0, 0.7),
+      rgba(0, 0, 255, 0.7),
+      rgba(75, 0, 130, 0.7),
+      rgba(148, 0, 211, 0.7)
+    );
+    background-size: 400% 400%;
+    animation: rainbow-background 3s ease infinite;
+    @apply text-white transition-all duration-300;
+  }
+  
+  .rainbow-button-glow:hover {
+    animation: rainbow-background 1s ease infinite;
+    @apply shadow-lg;
   }
   
   .dreamcatcher-border {
     @apply border-2 border-primary-purple/50 rounded-lg p-1 relative overflow-hidden;
     box-shadow: 0 0 15px rgba(155, 135, 245, 0.3);
+  }
+  
+  .rainbow-dreamcatcher-border {
+    @apply rounded-lg p-1 relative overflow-hidden;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(
+      to right,
+      #ff0000, /* Red */
+      #ff7f00, /* Orange */
+      #ffff00, /* Yellow */
+      #00ff00, /* Green */
+      #0000ff, /* Blue */
+      #4b0082, /* Indigo */
+      #9400d3  /* Violet */
+    ) 1;
+    box-shadow: 
+      0 0 10px rgba(255, 0, 0, 0.5),
+      0 0 20px rgba(255, 127, 0, 0.3),
+      0 0 30px rgba(255, 255, 0, 0.2);
+    animation: rainbow-shadow 6s linear infinite;
   }
   
   .dreamcatcher-border::before {
@@ -92,5 +219,83 @@
   .dreamcatcher:hover {
     filter: drop-shadow(0 0 8px #9b87f5);
     transform: scale(1.05);
+  }
+
+  @keyframes rainbow-text-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes rainbow-background {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes rainbow-shadow {
+    0% {
+      box-shadow: 
+        0 0 10px rgba(255, 0, 0, 0.5),
+        0 0 20px rgba(255, 127, 0, 0.3),
+        0 0 30px rgba(255, 255, 0, 0.2);
+    }
+    16.6% {
+      box-shadow: 
+        0 0 10px rgba(255, 127, 0, 0.5),
+        0 0 20px rgba(255, 255, 0, 0.3),
+        0 0 30px rgba(0, 255, 0, 0.2);
+    }
+    33.3% {
+      box-shadow: 
+        0 0 10px rgba(255, 255, 0, 0.5),
+        0 0 20px rgba(0, 255, 0, 0.3),
+        0 0 30px rgba(0, 0, 255, 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 0 10px rgba(0, 255, 0, 0.5),
+        0 0 20px rgba(0, 0, 255, 0.3),
+        0 0 30px rgba(75, 0, 130, 0.2);
+    }
+    66.6% {
+      box-shadow: 
+        0 0 10px rgba(0, 0, 255, 0.5),
+        0 0 20px rgba(75, 0, 130, 0.3),
+        0 0 30px rgba(148, 0, 211, 0.2);
+    }
+    83.3% {
+      box-shadow: 
+        0 0 10px rgba(75, 0, 130, 0.5),
+        0 0 20px rgba(148, 0, 211, 0.3),
+        0 0 30px rgba(255, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 
+        0 0 10px rgba(148, 0, 211, 0.5),
+        0 0 20px rgba(255, 0, 0, 0.3),
+        0 0 30px rgba(255, 127, 0, 0.2);
+    }
+  }
+  
+  @keyframes border-position {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
   }
 }

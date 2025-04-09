@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Disclaimer from '@/components/Disclaimer';
 import DreamCatcher from '@/components/DreamCatcher';
+import RainbowElement from '@/components/RainbowElement';
 
 const Index = () => {
   return (
@@ -38,6 +39,23 @@ const Index = () => {
           color="orange" 
           className="fixed -bottom-16 -right-16 opacity-25 z-10" 
           position="bottom-0 right-0"
+        />
+        
+        {/* Rainbow Elements */}
+        <RainbowElement 
+          size="lg"
+          speed="slow"
+          className="fixed -top-24 -left-24 opacity-40 z-5"
+        />
+        <RainbowElement 
+          size="md"
+          speed="medium"
+          className="fixed top-1/2 -right-16 opacity-30 z-5"
+        />
+        <RainbowElement 
+          size="lg"
+          speed="fast"
+          className="fixed -bottom-24 left-1/4 opacity-25 z-5"
         />
         
         <HeroSection />

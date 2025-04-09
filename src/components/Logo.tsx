@@ -10,15 +10,15 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
     <div className={cn("flex flex-col items-center w-full", className)}>
       <div className="relative">
-        <div className="dreamcatcher-border p-4 bg-black/40 shadow-lg">
+        <div className="rainbow-dreamcatcher-border p-4 bg-black/40 shadow-lg">
           <div className="font-bold tracking-wider text-center">
-            <div className="text-lg md:text-2xl text-primary-purple animate-pulse-glow mb-1">
+            <div className="text-lg md:text-2xl rainbow-text mb-1">
               NATIVE AMERICAN
             </div>
-            <div className="text-xl md:text-3xl text-glow bg-gradient-to-r from-primary-purple via-vivid-purple to-bright-blue bg-clip-text text-transparent">
+            <div className="text-xl md:text-3xl rainbow-text-glow bg-gradient-to-r from-primary-purple via-vivid-purple to-bright-blue bg-clip-text">
               HISTORY TIME MACHINE
             </div>
-            <div className="text-lg md:text-2xl text-primary-purple animate-pulse-glow mt-1">
+            <div className="text-lg md:text-2xl rainbow-text mt-1">
               OF DESTINY
             </div>
           </div>

@@ -36,9 +36,9 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-16 md:py-24">
+    <section id="faq" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-glow mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center rainbow-text-glow mb-6">
           Frequently Asked Questions
         </h2>
         
@@ -52,9 +52,9 @@ const FAQ: React.FC = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="cyberpunk-card mb-4"
+                className="rainbow-cyberpunk-card mb-4"
               >
-                <AccordionTrigger className="text-left px-6 py-4 text-primary-purple font-semibold">
+                <AccordionTrigger className="text-left px-6 py-4 rainbow-text font-semibold">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-light-gray/80">
