@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -218,6 +219,31 @@
   .dreamcatcher:hover {
     filter: drop-shadow(0 0 8px #9b87f5);
     transform: scale(1.05);
+  }
+
+  /* New dream catcher explosion animation */
+  .animate-dream-catcher-explode {
+    position: absolute;
+    animation: dream-catcher-explode 1s forwards;
+  }
+
+  @keyframes dream-catcher-explode {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.2);
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: 
+        translate(
+          calc(-50% + var(--explosion-x, 0)), 
+          calc(-50% + var(--explosion-y, 0))
+        )
+        scale(var(--explosion-scale, 1));
+    }
   }
 
   @keyframes rainbow-text-animation {

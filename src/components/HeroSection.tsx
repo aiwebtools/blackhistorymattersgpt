@@ -1,12 +1,29 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import DreamCatcher from './DreamCatcher';
 import VideoSection from './VideoSection';
+import DreamCatcherExplosion from './DreamCatcherExplosion';
 
 const HeroSection: React.FC = () => {
+  const [showExplosion, setShowExplosion] = useState(false);
+  
+  const handleJourneyButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setShowExplosion(true);
+  };
+  
+  const handleExplosionComplete = () => {
+    // Navigate to the URL after the explosion effect completes
+    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny', '_blank', 'noopener,noreferrer');
+    setShowExplosion(false);
+  };
+
   return (
     <section className="relative py-16 md:py-24 mt-16 md:mt-20 overflow-hidden">
+      {/* Dream catcher explosion effect */}
+      <DreamCatcherExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary-purple/10 rounded-full blur-3xl animate-float"></div>
@@ -39,6 +56,7 @@ const HeroSection: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
+                onClick={handleJourneyButtonClick}
               >
                 Begin Your Journey Through Native American History <ArrowRight size={20} />
               </a>
