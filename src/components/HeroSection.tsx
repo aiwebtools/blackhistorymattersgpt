@@ -23,8 +23,10 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-glow mb-6">
-              Journey Through Native American History
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="rainbow-text-glow bg-gradient-to-r from-primary-purple via-vivid-purple to-bright-blue bg-clip-text">
+                Journey Through Native American History
+              </span>
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-10">
