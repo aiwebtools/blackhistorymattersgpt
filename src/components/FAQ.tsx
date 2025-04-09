@@ -11,7 +11,7 @@ const FAQ: React.FC = () => {
   const faqItems = [
     {
       question: "What is the Native American History Time Machine of Destiny?",
-      answer: "The Native American History Time Machine of Destiny is an AI-powered interactive experience that allows users to virtually 'travel' to any point in Native American history. Guided by the Cherokee Chief of Destiny, users receive historically accurate, immersive storytelling about the time period they choose to visit, complete with photorealistic visual representations of their surroundings."
+      answer: "The Native American History Time Machine of Destiny is an AI-powered interactive experience that allows users to virtually 'travel' to any point in Native American history. Guided by the Geronimo Chief of Destiny, users receive historically accurate, immersive storytelling about the time period they choose to visit, complete with photorealistic visual representations of their surroundings."
     },
     {
       question: "How accurate is the historical information provided?",
@@ -23,7 +23,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Can I interact with historical Native American figures?",
-      answer: "Yes, the Cherokee Chief of Destiny may introduce you to historical Native figures relevant to your chosen time period. You can engage in simulated conversations with these figures, learning about their perspectives and experiences in an interactive way that brings history to life."
+      answer: "Yes, the Geronimo Chief of Destiny may introduce you to historical Native figures relevant to your chosen time period. You can engage in simulated conversations with these figures, learning about their perspectives and experiences in an interactive way that brings history to life."
     },
     {
       question: "Is this experience appropriate for educational purposes?",
@@ -31,7 +31,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "How do I start my time travel journey?",
-      answer: "To begin your journey, simply click the 'Speak to Geronimo' button, which will connect you to the Cherokee Chief of Destiny. You'll be asked to specify what date you'd like to teleport to and which tribal land or region you wish to visit. The Chief will then guide you through the time travel sequence and begin your immersive historical experience."
+      answer: "To begin your journey, simply click the 'Speak to Geronimo' button, which will connect you to the Geronimo Chief of Destiny. You'll be asked to specify what date you'd like to teleport to and which tribal land or region you wish to visit. The Chief will then guide you through the time travel sequence and begin your immersive historical experience."
     }
   ];
 
