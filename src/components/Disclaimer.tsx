@@ -16,7 +16,7 @@ const Disclaimer: React.FC = () => {
             <AlertTriangle className="h-5 w-5 text-primary-purple" />
             <AlertTitle>Important Notice</AlertTitle>
             <AlertDescription className="text-light-gray/80">
-              Please read the following disclaimer carefully before using the Native American History Time Machine of Destiny.
+              This service is provided for informational, educational, and research purposes only. Please read the following disclaimer carefully before using the Native American History Time Machine of Destiny.
             </AlertDescription>
           </Alert>
           
@@ -58,6 +58,12 @@ const Disclaimer: React.FC = () => {
             <p className="font-semibold">
               By using the Native American History Time Machine of Destiny, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.
             </p>
+            
+            <div className="mt-8 p-4 bg-primary-purple/10 rounded-lg border border-primary-purple/20">
+              <p className="text-center text-light-gray/80 font-medium">
+                For informational, educational, and research purposes only.
+              </p>
+            </div>
           </div>
         </div>
       </div>

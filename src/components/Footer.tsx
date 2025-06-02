@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <FooterLink 
-                  href="https://aiwebtools.ai/terms-of-services" 
+                  href="https://aiwebtools.lovable.app/disclaimers" 
                   external
                 >
                   Terms of Service
@@ -158,6 +158,13 @@ const Footer: React.FC = () => {
           >
             More AI Tools
           </FooterLink>
+        </div>
+        
+        {/* Educational disclaimer */}
+        <div className="mt-6 pt-4 border-t border-primary-purple/10 text-center">
+          <p className="text-light-gray/60 text-xs">
+            For informational, educational, and research purposes only.
+          </p>
         </div>
       </div>
     </footer>
