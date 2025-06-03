@@ -42,13 +42,19 @@ const HeroSection: React.FC = () => {
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="rainbow-text-glow bg-gradient-to-r from-primary-purple via-vivid-purple to-bright-blue bg-clip-text">
-                Journey Through Native American History
+                AI-Powered Journey Through Native American History
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-light-gray mb-10">
-              Experience immersive time travel to any era of Native American history with Geronimo, Chief of Rainbow Apache Destiny as your guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
+            <p className="text-lg md:text-xl text-light-gray mb-6">
+              Experience the most advanced AI tools for historical exploration. Our cutting-edge AI time machine brings Native American history to life with Geronimo, Chief of Rainbow Apache Destiny as your guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
             </p>
+            
+            <div className="mb-6 p-4 bg-primary-purple/10 rounded-lg border border-primary-purple/20">
+              <p className="text-sm text-light-gray/90 font-medium">
+                🏆 <span className="text-primary-purple font-bold">Best AI Tools 2024</span> • Powered by AiWebTools.Ai • Advanced AI Technology for Education & Research
+              </p>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-6 mb-12">
               <a 
@@ -56,14 +62,14 @@ const HeroSection: React.FC = () => {
                 className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
                 onClick={handleJourneyButtonClick}
               >
-                Begin Your Journey Through Native American History <ArrowRight size={20} />
+                Try Our AI Time Machine Tool <ArrowRight size={20} />
               </a>
               
               <a 
                 href="#how-it-works" 
                 className="bg-transparent border border-primary-purple text-primary-purple hover:bg-primary-purple/10 px-8 py-4 rounded-md font-semibold transition-colors text-lg flex items-center justify-center"
               >
-                Learn How It Works
+                Learn How Our AI Works
               </a>
             </div>
 
@@ -79,7 +85,7 @@ const HeroSection: React.FC = () => {
               <iframe
                 src="https://www.youtube.com/embed/jVFTGCeuNSM?autoplay=1&mute=0&vq=hd1080&rel=0"
                 className="w-full h-full"
-                title="Native American History Time Machine Of Destiny"
+                title="Native American History Time Machine - AI Tools by AiWebTools.Ai"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -95,18 +101,18 @@ const HeroSection: React.FC = () => {
         {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mx-auto mt-12">
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '0.5s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">Time Travel</div>
-            <p className="text-light-gray/80">Visit any year in Native American history with vivid detail</p>
+            <div className="text-primary-purple font-bold text-lg mb-2">AI Time Travel Technology</div>
+            <p className="text-light-gray/80">Advanced AI tools for visiting any year in Native American history with vivid detail</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">Sacred Wisdom</div>
-            <p className="text-light-gray/80">Experience authentic cultural knowledge and traditions</p>
+            <div className="text-primary-purple font-bold text-lg mb-2">AI-Powered Sacred Wisdom</div>
+            <p className="text-light-gray/80">Experience authentic cultural knowledge through cutting-edge AI storytelling tools</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1.5s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">Visual Journey</div>
-            <p className="text-light-gray/80">See photorealistic images of your historical surroundings</p>
+            <div className="text-primary-purple font-bold text-lg mb-2">AI Visual Experience</div>
+            <p className="text-light-gray/80">See photorealistic AI-generated images of your historical surroundings</p>
           </div>
         </div>
       </div>
