@@ -70,7 +70,7 @@ const Header: React.FC = () => {
   };
   
   const handleExplosionComplete = () => {
-    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny', '_blank', 'noopener,noreferrer');
+    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
   
@@ -100,11 +100,11 @@ const Header: React.FC = () => {
           isMobile && !isMenuOpen ? "hidden" : "mt-4 md:mt-0"
         )}>
           <NavLink 
-            href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
+            href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
             className="rainbow-button-glow rounded-md font-semibold text-center max-w-[320px] md:max-w-none"
             onClick={handleExplosionClick}
           >
-            Speak to Geronimo
+            Journey Through Time Lead By DR Martin Luther King jr
           </NavLink>
           <NavLink href="#faq" onClick={closeMenu} rainbow>FAQ</NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
