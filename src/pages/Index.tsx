@@ -7,7 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Disclaimer from '@/components/Disclaimer';
-import DreamCatcher from '@/components/DreamCatcher';
+import AfricanSymbol from '@/components/AfricanSymbol';
 import RainbowElement from '@/components/RainbowElement';
 
 const Index = () => {
@@ -15,30 +15,36 @@ const Index = () => {
     <div className="min-h-screen flex flex-col overflow-hidden">
       <Header />
       <main className="flex-grow relative pt-16 md:pt-20">
-        {/* Decorative Dream Catchers */}
-        <DreamCatcher 
+        {/* Decorative African Heritage Symbols */}
+        <AfricanSymbol 
           size="lg" 
-          color="purple" 
+          color="gold" 
+          type="ankh"
           className="fixed -top-12 -left-12 opacity-30 z-10" 
-          position="top-0 left-0"
         />
-        <DreamCatcher 
+        <AfricanSymbol 
           size="md" 
-          color="blue" 
+          color="red" 
+          type="mask"
           className="fixed top-1/3 -right-12 opacity-20 z-10" 
-          position="top-1/3 right-0"
         />
-        <DreamCatcher 
+        <AfricanSymbol 
           size="sm" 
-          color="pink" 
+          color="green" 
+          type="adinkra"
           className="fixed bottom-1/4 -left-8 opacity-30 z-10" 
-          position="bottom-1/4 left-0"
         />
-        <DreamCatcher 
+        <AfricanSymbol 
           size="lg" 
           color="orange" 
+          type="shield"
           className="fixed -bottom-16 -right-16 opacity-25 z-10" 
-          position="bottom-0 right-0"
+        />
+        <AfricanSymbol 
+          size="md" 
+          color="purple" 
+          type="drum"
+          className="fixed top-1/2 left-1/4 opacity-20 z-10" 
         />
         
         {/* Rainbow Elements */}

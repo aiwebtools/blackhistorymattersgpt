@@ -224,13 +224,13 @@
     transform: scale(1.05);
   }
 
-  .animate-dream-catcher-explode-3d {
+  .animate-african-symbol-explode {
     position: absolute;
-    animation: dream-catcher-explode-3d 2.5s forwards;
+    animation: african-symbol-explode 2.5s forwards;
     transform-style: preserve-3d;
   }
 
-  @keyframes dream-catcher-explode-3d {
+  @keyframes african-symbol-explode {
     0% {
       opacity: 0;
       transform: translate3d(-50%, -50%, 0) scale(0.2) rotate(0deg);
@@ -245,12 +245,22 @@
       transform: translate3d(
         calc(-50% + var(--explosion-x, 0)), 
         calc(-50% + var(--explosion-y, 0)), 
-        var(--explosion-z, 0)
+        0
       ) 
       scale(var(--explosion-scale, 1)) 
       rotate(var(--explosion-rotation, 0deg));
       filter: brightness(0.8);
     }
+  }
+
+  .african-symbol {
+    @apply transition-all duration-300;
+    transform-origin: center center;
+  }
+
+  .african-symbol:hover {
+    filter: drop-shadow(0 0 12px currentColor);
+    transform: scale(1.05);
   }
 
   @keyframes rainbow-text-animation {

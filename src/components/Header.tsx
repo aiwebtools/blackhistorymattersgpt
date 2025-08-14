@@ -5,7 +5,7 @@ import Logo from './Logo';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import DreamCatcherExplosion from './DreamCatcherExplosion';
+import AfricanSymbolExplosion from './AfricanSymbolExplosion';
 
 interface NavLinkProps {
   href: string;
@@ -76,8 +76,8 @@ const Header: React.FC = () => {
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-4 shadow-md">
-      {/* Dream catcher explosion effect */}
-      <DreamCatcherExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+      {/* African symbol explosion effect */}
+      <AfricanSymbolExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
       
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="w-full md:w-auto flex justify-between items-center">

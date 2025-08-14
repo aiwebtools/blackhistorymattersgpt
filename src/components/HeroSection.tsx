@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import DreamCatcher from './DreamCatcher';
+import AfricanSymbol from './AfricanSymbol';
 import VideoSection from './VideoSection';
-import DreamCatcherExplosion from './DreamCatcherExplosion';
+import AfricanSymbolExplosion from './AfricanSymbolExplosion';
 
 const HeroSection: React.FC = () => {
   const [showExplosion, setShowExplosion] = useState(false);
@@ -21,8 +21,8 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative py-16 md:py-24 mt-16 md:mt-20 overflow-hidden">
-      {/* Dream catcher explosion effect */}
-      <DreamCatcherExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+      {/* African symbol explosion effect */}
+      <AfricanSymbolExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
 
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
@@ -33,8 +33,8 @@ const HeroSection: React.FC = () => {
 
       {/* African heritage symbols */}
       <div className="hidden md:block">
-        <DreamCatcher size="sm" color="orange" className="absolute top-10 left-10 z-10" />
-        <DreamCatcher size="md" color="pink" className="absolute bottom-10 right-10 z-10" />
+        <AfricanSymbol size="sm" color="gold" type="ankh" className="absolute top-10 left-10 z-10" />
+        <AfricanSymbol size="md" color="orange" type="adinkra" className="absolute bottom-10 right-10 z-10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

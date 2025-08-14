@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
-import DreamCatcherExplosion from './DreamCatcherExplosion';
+import AfricanSymbolExplosion from './AfricanSymbolExplosion';
 
 interface FooterLinkProps {
   href: string;
@@ -50,8 +50,8 @@ const Footer: React.FC = () => {
   
   return (
     <footer className="bg-black border-t border-primary-purple/20 py-12 mt-16">
-      {/* Dream catcher explosion effect */}
-      <DreamCatcherExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+      {/* African symbol explosion effect */}
+      <AfricanSymbolExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
       
       <div className="container mx-auto px-4">
         <div className="w-full flex justify-center mb-6">
