@@ -66,10 +66,12 @@ const HeroSection: React.FC = () => {
               </a>
               
               <a 
-                href="#how-it-works" 
+                href="https://www.ai-webtools.com" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-transparent border border-amber-600 text-amber-600 hover:bg-amber-600/10 px-8 py-4 rounded-md font-semibold transition-colors text-lg flex items-center justify-center"
               >
-                Discover Truth Liberation
+                Discover Liberating Ai Tools
               </a>
             </div>
 
