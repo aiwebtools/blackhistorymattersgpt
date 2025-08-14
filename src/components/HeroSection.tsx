@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-6">
-              Experience the most advanced AI time machine for Black history exploration. Travel through time with Dr. Martin Luther King Jr., Voice of the Dream, as your guide. Discover authentic stories, hidden truths, and ancestral wisdom from the past—or explore possible futures shaped by your moral choices.
+              <span className="text-amber-600 font-semibold">Break free from historical lies.</span> Experience the most advanced AI time machine for Black history exploration that reveals hidden truths. Travel through time with Dr. Martin Luther King Jr., Voice of the Dream, as your liberation guide. Discover authentic stories, suppressed truths, and ancestral wisdom—or explore possible futures shaped by your moral choices for justice.
             </p>
             
             <div className="mb-6 p-4 bg-gradient-to-r from-amber-600/10 to-orange-500/10 rounded-lg border border-amber-600/20">
@@ -62,21 +62,23 @@ const HeroSection: React.FC = () => {
                 className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
                 onClick={handleJourneyButtonClick}
               >
-                Journey Through Time Lead By DR Martin Luther King jr <ArrowRight size={20} />
+                Journey Through Time Led By DR Martin Luther King jr <ArrowRight size={20} />
               </a>
               
               <a 
                 href="#how-it-works" 
                 className="bg-transparent border border-amber-600 text-amber-600 hover:bg-amber-600/10 px-8 py-4 rounded-md font-semibold transition-colors text-lg flex items-center justify-center"
               >
-                Learn About Time Travel
+                Discover Truth Liberation
               </a>
             </div>
 
-            {/* Privacy notice */}
-            <p className="text-sm text-light-gray/70 mt-4 italic">
-              AiWebTools.ai does not hold any rights to user-generated content. All conversations are private and exclusively between the user and the AI.
-            </p>
+            {/* Enhanced privacy notice */}
+            <div className="mt-6 p-3 bg-black/30 rounded-lg border border-amber-600/20">
+              <p className="text-xs text-light-gray/70 text-center">
+                🔒 <span className="font-medium">Private & Secure:</span> AiWebTools.ai protects your privacy. All conversations are private and exclusively between you and the AI.
+              </p>
+            </div>
           </div>
           
           {/* Hero image section on the right side */}
@@ -99,18 +101,18 @@ const HeroSection: React.FC = () => {
         {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mx-auto mt-12">
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '0.5s' }}>
-            <div className="text-amber-600 font-bold text-lg mb-2">AI Time Travel Technology</div>
-            <p className="text-light-gray/80">Advanced AI tools for visiting any year in Black history with vivid detail</p>
+            <div className="text-amber-600 font-bold text-lg mb-2">Truth Liberation Technology</div>
+            <p className="text-light-gray/80">Revolutionary AI that breaks the chains of historical deception and reveals suppressed Black history</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1s' }}>
-            <div className="text-amber-600 font-bold text-lg mb-2">Dr. King as Your Guide</div>
-            <p className="text-light-gray/80">Experience history with Dr. Martin Luther King Jr., Voice of the Dream, as your personal time travel guide</p>
+            <div className="text-amber-600 font-bold text-lg mb-2">Voice of Liberation Guide</div>
+            <p className="text-light-gray/80">Dr. Martin Luther King Jr., Voice of the Dream, guides your awakening journey through hidden truths</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1.5s' }}>
-            <div className="text-amber-600 font-bold text-lg mb-2">Photorealistic 4K Images</div>
-            <p className="text-light-gray/80">See stunning 4K photorealistic images of your historical surroundings after every journey</p>
+            <div className="text-amber-600 font-bold text-lg mb-2">Truth Revealed in 4K Glory</div>
+            <p className="text-light-gray/80">Witness the erased history in stunning 4K photorealistic images that show what they tried to hide</p>
           </div>
         </div>
       </div>

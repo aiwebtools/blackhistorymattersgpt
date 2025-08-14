@@ -12,7 +12,7 @@ const FAQ: React.FC = () => {
       answer: "All historical information provided by our AI tools is factually accurate and thoroughly researched. AiWebTools.Ai has developed advanced AI algorithms that strictly adhere to established historical records and scholarly sources. Our AI web tools are designed to present authentic representations of Black history and culture without fabrication, making us a trusted leader in educational AI technology."
     },
     {
-      question: "What is the 'Test of Two Sacred Fates' feature for future exploration?",
+      question: "What is 'The Test of the Sacred Times' feature for future exploration?",
       answer: "This unique AI-powered feature showcases the advanced capabilities of our time machine. When users explore potential futures, they participate in 'The Test of the Sacred Times'—a spiritual trial with three moral questions about resource stewardship, technology use, and global unity. Your choices determine whether you experience a future of justice or witness the consequences of betrayal and greed."
     },
     {
@@ -25,7 +25,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "How do I start using this revolutionary AI time travel tool?",
-      answer: "Getting started with our AI time machine is simple! Click the 'Journey Through Time Lead By DR Martin Luther King jr' button to connect with Dr. Martin Luther King Jr., Voice of the Dream. You'll be asked what date in Black history you wish to teleport to and which Black land, community, or moment in the global struggle for freedom you'd like to explore. Experience why AiWebTools.Ai is considered among the best AI tools for immersive historical education."
+      answer: "Getting started with our AI time machine is simple! Click the 'Journey Through Time Led By DR Martin Luther King jr' button to connect with Dr. Martin Luther King Jr., Voice of the Dream. You'll be asked what date in Black history you wish to teleport to and which Black land, community, or moment in the global struggle for freedom you'd like to explore. Experience why AiWebTools.Ai is considered among the best AI tools for immersive historical education."
     }
   ];
 

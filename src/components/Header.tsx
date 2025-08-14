@@ -104,7 +104,7 @@ const Header: React.FC = () => {
             className="rainbow-button-glow rounded-md font-semibold text-center max-w-[320px] md:max-w-none"
             onClick={handleExplosionClick}
           >
-            Journey Through Time Lead By DR Martin Luther King jr
+            Journey Through Time Led By DR Martin Luther King jr
           </NavLink>
           <NavLink href="#faq" onClick={closeMenu} rainbow>FAQ</NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>

@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
                   className="max-w-[300px] md:max-w-none"
                   onClick={handleExplosionClick}
                 >
-                  Journey Through Time Lead By DR Martin Luther King jr
+                  Journey Through Time Led By DR Martin Luther King jr
                 </FooterLink>
               </li>
               <li>
