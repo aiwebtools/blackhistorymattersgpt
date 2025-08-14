@@ -4,7 +4,6 @@ import { ArrowRight } from 'lucide-react';
 import DreamCatcher from './DreamCatcher';
 import VideoSection from './VideoSection';
 import DreamCatcherExplosion from './DreamCatcherExplosion';
-import timeHeroImage from '@/assets/time-machine-hero.jpg';
 
 const HeroSection: React.FC = () => {
   const [showExplosion, setShowExplosion] = useState(false);
@@ -27,22 +26,22 @@ const HeroSection: React.FC = () => {
 
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary-purple/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-vivid-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-40 right-20 w-48 h-48 bg-bright-blue/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-amber-600/20 to-orange-500/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-br from-red-600/20 to-yellow-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-br from-green-600/20 to-emerald-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      {/* Dream catchers */}
+      {/* African heritage symbols */}
       <div className="hidden md:block">
-        <DreamCatcher size="sm" color="purple" className="absolute top-10 left-10 z-10" />
-        <DreamCatcher size="md" color="blue" className="absolute bottom-10 right-10 z-10" />
+        <DreamCatcher size="sm" color="orange" className="absolute top-10 left-10 z-10" />
+        <DreamCatcher size="md" color="pink" className="absolute bottom-10 right-10 z-10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="rainbow-text-glow bg-gradient-to-r from-primary-purple via-vivid-purple to-bright-blue bg-clip-text">
+              <span className="rainbow-text-glow bg-gradient-to-r from-amber-600 via-red-600 to-orange-500 bg-clip-text">
                 AI-Powered Journey Through Black History
               </span>
             </h1>
@@ -51,9 +50,9 @@ const HeroSection: React.FC = () => {
               Experience the most advanced AI time machine for Black history exploration. Travel through time with Dr. Martin Luther King Jr., Voice of the Dream, as your guide. Discover authentic stories, hidden truths, and ancestral wisdom from the past—or explore possible futures shaped by your moral choices.
             </p>
             
-            <div className="mb-6 p-4 bg-primary-purple/10 rounded-lg border border-primary-purple/20">
+            <div className="mb-6 p-4 bg-gradient-to-r from-amber-600/10 to-orange-500/10 rounded-lg border border-amber-600/20">
               <p className="text-sm text-light-gray/90 font-medium">
-                🏆 <span className="text-primary-purple font-bold">Best AI Tools 2024</span> • Powered by AiWebTools.Ai • Advanced AI Technology for Education & Research
+                🏆 <span className="text-amber-600 font-bold">Best AI Tools 2024</span> • Powered by AiWebTools.Ai • Advanced AI Technology for Education & Research
               </p>
             </div>
             
@@ -68,7 +67,7 @@ const HeroSection: React.FC = () => {
               
               <a 
                 href="#how-it-works" 
-                className="bg-transparent border border-primary-purple text-primary-purple hover:bg-primary-purple/10 px-8 py-4 rounded-md font-semibold transition-colors text-lg flex items-center justify-center"
+                className="bg-transparent border border-amber-600 text-amber-600 hover:bg-amber-600/10 px-8 py-4 rounded-md font-semibold transition-colors text-lg flex items-center justify-center"
               >
                 Learn About Time Travel
               </a>
@@ -84,15 +83,15 @@ const HeroSection: React.FC = () => {
           <div className="w-full md:w-1/2 mt-10 md:mt-0">
             <div className="relative w-full aspect-video cyberpunk-card p-2">
               <img
-                src={timeHeroImage}
-                alt="Black History Matters Time Machine - AI-powered historical exploration"
+                src="/lovable-uploads/4e17cfa0-fbe7-4cda-abc2-9d4deab16961.png"
+                alt="Black History Matters Time Machine of Truth - AI-powered historical exploration"
                 className="w-full h-full object-cover rounded"
                 loading="eager"
               />
               
               {/* Decorative elements */}
-              <div className="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-primary-purple"></div>
-              <div className="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-primary-purple"></div>
+              <div className="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-amber-600"></div>
+              <div className="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-amber-600"></div>
             </div>
           </div>
         </div>
@@ -100,17 +99,17 @@ const HeroSection: React.FC = () => {
         {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mx-auto mt-12">
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '0.5s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">AI Time Travel Technology</div>
+            <div className="text-amber-600 font-bold text-lg mb-2">AI Time Travel Technology</div>
             <p className="text-light-gray/80">Advanced AI tools for visiting any year in Black history with vivid detail</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">Dr. King as Your Guide</div>
+            <div className="text-amber-600 font-bold text-lg mb-2">Dr. King as Your Guide</div>
             <p className="text-light-gray/80">Experience history with Dr. Martin Luther King Jr., Voice of the Dream, as your personal time travel guide</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1.5s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">Photorealistic 4K Images</div>
+            <div className="text-amber-600 font-bold text-lg mb-2">Photorealistic 4K Images</div>
             <p className="text-light-gray/80">See stunning 4K photorealistic images of your historical surroundings after every journey</p>
           </div>
         </div>

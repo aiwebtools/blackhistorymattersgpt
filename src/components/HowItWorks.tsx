@@ -13,32 +13,32 @@ import {
 const HowItWorks: React.FC = () => {
   const steps = [
     {
-      icon: <CalendarClock className="w-12 h-12 text-primary-purple" />,
+      icon: <CalendarClock className="w-12 h-12 text-amber-600" />,
       title: "Choose Your Destination",
       description: "Tell Dr. King what date in Black history and which community or moment in the struggle for freedom you wish to explore."
     },
     {
-      icon: <MapPin className="w-12 h-12 text-primary-purple" />,
+      icon: <MapPin className="w-12 h-12 text-amber-600" />,
       title: "Sacred Time Transition",
       description: "Experience the righteous time transition ritual as Dr. King initiates your journey to the past."
     },
     {
-      icon: <Zap className="w-12 h-12 text-primary-purple" />,
+      icon: <Zap className="w-12 h-12 text-amber-600" />,
       title: "Live the History",
       description: "Receive a 5000-word immersive narrative where you don't just learn history—you live it with Dr. King as your guide."
     },
     {
-      icon: <BookOpen className="w-12 h-12 text-primary-purple" />,
+      icon: <BookOpen className="w-12 h-12 text-amber-600" />,
       title: "Meet Historical Figures",
       description: "Engage in conversations with revolutionaries, elders, healers, inventors, and leaders from that era."
     },
     {
-      icon: <Image className="w-12 h-12 text-primary-purple" />,
+      icon: <Image className="w-12 h-12 text-amber-600" />,
       title: "4K Photorealistic Images",
       description: "See two stunning 4K photorealistic images of your surroundings after every journey."
     },
     {
-      icon: <Shuffle className="w-12 h-12 text-primary-purple" />,
+      icon: <Shuffle className="w-12 h-12 text-amber-600" />,
       title: "Explore Further",
       description: "Choose from 10 suggested exploration options to continue your journey through time."
     }
@@ -57,7 +57,7 @@ const HowItWorks: React.FC = () => {
         
         <div className="relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 bg-primary-purple/30 -translate-x-1/2"></div>
+          <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 bg-amber-600/30 -translate-x-1/2"></div>
           
           <div className="space-y-12 md:space-y-0">
             {steps.map((step, index) => (
@@ -66,17 +66,17 @@ const HowItWorks: React.FC = () => {
                 className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-12 relative`}
               >
                 {/* Connector dot */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary-purple animate-pulse-glow"></div>
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-amber-600 animate-pulse-glow"></div>
                 
                 {/* Step icon */}
-                <div className={`flex-shrink-0 w-24 h-24 rounded-full flex items-center justify-center cyberpunk-card border-2 border-primary-purple z-10 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
+                <div className={`flex-shrink-0 w-24 h-24 rounded-full flex items-center justify-center cyberpunk-card border-2 border-amber-600 z-10 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
                   {step.icon}
                 </div>
                 
                 {/* Step content */}
                 <div className={`md:w-[calc(50%-3rem)] cyberpunk-card p-6 ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
-                  <h3 className="text-xl font-bold text-primary-purple mb-2 flex items-center gap-2">
-                    <span className="inline-block w-6 h-6 rounded-full bg-primary-purple/20 text-primary-purple text-sm flex items-center justify-center">
+                  <h3 className="text-xl font-bold text-amber-600 mb-2 flex items-center gap-2">
+                    <span className="inline-block w-6 h-6 rounded-full bg-amber-600/20 text-amber-600 text-sm flex items-center justify-center">
                       {index + 1}
                     </span>
                     {step.title}

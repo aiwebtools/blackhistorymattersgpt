@@ -51,7 +51,7 @@ const Testimonials: React.FC = () => {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star 
                     key={i} 
-                    className={`w-5 h-5 ${i < testimonial.stars ? 'text-primary-purple fill-primary-purple' : 'text-gray-400'}`} 
+                    className={`w-5 h-5 ${i < testimonial.stars ? 'text-amber-600 fill-amber-600' : 'text-gray-400'}`} 
                   />
                 ))}
               </div>
@@ -61,7 +61,7 @@ const Testimonials: React.FC = () => {
               </blockquote>
               
               <div className="mt-auto">
-                <div className="font-semibold text-primary-purple">
+                <div className="font-semibold text-amber-600">
                   {testimonial.name}
                 </div>
                 <div className="text-sm text-light-gray/70">
