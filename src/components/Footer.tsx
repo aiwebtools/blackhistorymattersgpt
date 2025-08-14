@@ -98,17 +98,17 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold text-primary-purple mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li>
-                <FooterLink 
-                  href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
-                  external
-                  rainbow
-                  className="max-w-[300px] md:max-w-none"
-                  onClick={handleExplosionClick}
-                >
-                  Journey Through Time Led By DR Martin Luther King jr
-                </FooterLink>
-              </li>
+               <li>
+                 <FooterLink 
+                   href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
+                   external
+                   rainbow
+                   className="max-w-[300px] md:max-w-none"
+                   onClick={handleExplosionClick}
+                 >
+                   Black History Matters AI Time Machine - Led By DR Martin Luther King jr
+                 </FooterLink>
+               </li>
               <li>
                 <FooterLink href="#disclaimer" rainbow>
                   Disclaimer
