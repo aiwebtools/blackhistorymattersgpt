@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import DreamCatcher from './DreamCatcher';
 import VideoSection from './VideoSection';
 import DreamCatcherExplosion from './DreamCatcherExplosion';
+import timeHeroImage from '@/assets/time-machine-hero.jpg';
 
 const HeroSection: React.FC = () => {
   const [showExplosion, setShowExplosion] = useState(false);
@@ -15,7 +16,7 @@ const HeroSection: React.FC = () => {
   
   const handleExplosionComplete = () => {
     // Navigate to the URL after the explosion effect completes
-    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-black-history-time-machine-of-truth', '_blank', 'noopener,noreferrer');
+    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
 
@@ -47,7 +48,7 @@ const HeroSection: React.FC = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-6">
-              Experience the most advanced AI tools for historical exploration. Our cutting-edge AI time machine brings Black history to life with our AI guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
+              Experience the most advanced AI time machine for Black history exploration. Travel through time with Dr. Martin Luther King Jr., Voice of the Dream, as your guide. Discover authentic stories, hidden truths, and ancestral wisdom from the past—or explore possible futures shaped by your moral choices.
             </p>
             
             <div className="mb-6 p-4 bg-primary-purple/10 rounded-lg border border-primary-purple/20">
@@ -62,14 +63,14 @@ const HeroSection: React.FC = () => {
                 className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
                 onClick={handleJourneyButtonClick}
               >
-                Try Our AI Time Machine Tool <ArrowRight size={20} />
+                Begin Your Time Travel Journey <ArrowRight size={20} />
               </a>
               
               <a 
                 href="#how-it-works" 
                 className="bg-transparent border border-primary-purple text-primary-purple hover:bg-primary-purple/10 px-8 py-4 rounded-md font-semibold transition-colors text-lg flex items-center justify-center"
               >
-                Learn How Our AI Works
+                Learn About Time Travel
               </a>
             </div>
 
@@ -79,17 +80,15 @@ const HeroSection: React.FC = () => {
             </p>
           </div>
           
-          {/* Embedded video section on the right side */}
+          {/* Hero image section on the right side */}
           <div className="w-full md:w-1/2 mt-10 md:mt-0">
             <div className="relative w-full aspect-video cyberpunk-card p-2">
-              <iframe
-                src="https://www.youtube.com/embed/jVFTGCeuNSM?autoplay=1&mute=0&vq=hd1080&rel=0"
-                className="w-full h-full"
-                title="Black History Time Machine - AI Tools by AiWebTools.Ai"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <img
+                src={timeHeroImage}
+                alt="Black History Matters Time Machine - AI-powered historical exploration"
+                className="w-full h-full object-cover rounded"
+                loading="eager"
+              />
               
               {/* Decorative elements */}
               <div className="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-primary-purple"></div>
@@ -106,13 +105,13 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">AI-Powered Sacred Wisdom</div>
-            <p className="text-light-gray/80">Experience authentic cultural knowledge through cutting-edge AI storytelling tools</p>
+            <div className="text-primary-purple font-bold text-lg mb-2">Dr. King as Your Guide</div>
+            <p className="text-light-gray/80">Experience history with Dr. Martin Luther King Jr., Voice of the Dream, as your personal time travel guide</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1.5s' }}>
-            <div className="text-primary-purple font-bold text-lg mb-2">AI Visual Experience</div>
-            <p className="text-light-gray/80">See photorealistic AI-generated images of your historical surroundings</p>
+            <div className="text-primary-purple font-bold text-lg mb-2">Photorealistic 4K Images</div>
+            <p className="text-light-gray/80">See stunning 4K photorealistic images of your historical surroundings after every journey</p>
           </div>
         </div>
       </div>

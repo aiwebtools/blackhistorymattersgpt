@@ -12,12 +12,12 @@ const FAQ: React.FC = () => {
       answer: "All historical information provided by our AI tools is factually accurate and thoroughly researched. AiWebTools.Ai has developed advanced AI algorithms that strictly adhere to established historical records and scholarly sources. Our AI web tools are designed to present authentic representations of Black history and culture without fabrication, making us a trusted leader in educational AI technology."
     },
     {
-      question: "What is the 'Test of Two Sacred Fates' AI feature for future exploration?",
-      answer: "This unique AI-powered feature showcases the advanced capabilities of our AI tools. When users explore potential futures through our AI time machine, they participate in an interactive decision-making experience with three pivotal questions. Our AI technology analyzes your choices to generate either utopian or dystopian future scenarios, demonstrating the sophisticated AI algorithms developed by AiWebTools.Ai."
+      question: "What is the 'Test of Two Sacred Fates' feature for future exploration?",
+      answer: "This unique AI-powered feature showcases the advanced capabilities of our time machine. When users explore potential futures, they participate in 'The Test of the Sacred Times'—a spiritual trial with three moral questions about resource stewardship, technology use, and global unity. Your choices determine whether you experience a future of justice or witness the consequences of betrayal and greed."
     },
     {
       question: "Can I interact with historical figures using your AI tools?",
-      answer: "Yes! Our advanced AI technology allows you to engage in simulated conversations with historical Black figures and leaders. This AI-powered interaction feature sets our tools apart from other AI web tools in the market. Our AI guide, powered by sophisticated AI algorithms, can introduce you to relevant historical figures and facilitate meaningful conversations."
+      answer: "Yes! Our advanced AI technology allows you to engage in simulated conversations with historical Black figures and leaders through immersive 5000-word narratives. Dr. Martin Luther King Jr., Voice of the Dream, guides every journey and can introduce you to revolutionaries, elders, healers, inventors, and leaders from any time period in Black history. You don't just learn history—you live it."
     },
     {
       question: "Why choose AiWebTools.Ai for educational AI tools?",
@@ -25,7 +25,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "How do I start using this revolutionary AI time travel tool?",
-      answer: "Getting started with our AI tools is simple! Click the 'Try Our AI Time Machine Tool' button to connect with our AI-powered time machine. Our user-friendly AI interface will guide you through selecting your destination date and location. Experience why AiWebTools.Ai is considered among the best AI tools for immersive historical education."
+      answer: "Getting started with our AI time machine is simple! Click the 'Begin Your Time Travel Journey' button to connect with Dr. Martin Luther King Jr., Voice of the Dream. You'll be asked what date in Black history you wish to teleport to and which Black land, community, or moment in the global struggle for freedom you'd like to explore. Experience why AiWebTools.Ai is considered among the best AI tools for immersive historical education."
     }
   ];
 

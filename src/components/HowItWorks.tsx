@@ -14,33 +14,33 @@ const HowItWorks: React.FC = () => {
   const steps = [
     {
       icon: <CalendarClock className="w-12 h-12 text-primary-purple" />,
-      title: "Choose Your Time",
-      description: "Select any year in Black history you wish to explore."
+      title: "Choose Your Destination",
+      description: "Tell Dr. King what date in Black history and which community or moment in the struggle for freedom you wish to explore."
     },
     {
       icon: <MapPin className="w-12 h-12 text-primary-purple" />,
-      title: "Select Your Location",
-      description: "Specify which community or region you want to visit."
+      title: "Sacred Time Transition",
+      description: "Experience the righteous time transition ritual as Dr. King initiates your journey to the past."
     },
     {
       icon: <Zap className="w-12 h-12 text-primary-purple" />,
-      title: "Time Travel Sequence",
-      description: "Experience a transformative journey to your chosen time and place."
+      title: "Live the History",
+      description: "Receive a 5000-word immersive narrative where you don't just learn history—you live it with Dr. King as your guide."
     },
     {
       icon: <BookOpen className="w-12 h-12 text-primary-purple" />,
-      title: "Immersive Storytelling",
-      description: "Receive detailed, historically accurate narratives about your surroundings."
+      title: "Meet Historical Figures",
+      description: "Engage in conversations with revolutionaries, elders, healers, inventors, and leaders from that era."
     },
     {
       icon: <Image className="w-12 h-12 text-primary-purple" />,
-      title: "Visual Experience",
-      description: "See photorealistic images of your historical environment."
+      title: "4K Photorealistic Images",
+      description: "See two stunning 4K photorealistic images of your surroundings after every journey."
     },
     {
       icon: <Shuffle className="w-12 h-12 text-primary-purple" />,
-      title: "Continue Your Journey",
-      description: "Choose from suggestions to further explore the time period."
+      title: "Explore Further",
+      description: "Choose from 10 suggested exploration options to continue your journey through time."
     }
   ];
 
@@ -52,7 +52,7 @@ const HowItWorks: React.FC = () => {
         </h2>
         
         <p className="text-center text-light-gray max-w-3xl mx-auto mb-16">
-          Embark on a transformative journey through time with our Black History Time Machine of Truth. Follow these steps to begin your adventure.
+          Embark on a truth-revealing journey through time with Dr. Martin Luther King Jr., Voice of the Dream. Follow these steps to begin your transformative adventure through Black history.
         </p>
         
         <div className="relative">
@@ -92,7 +92,7 @@ const HowItWorks: React.FC = () => {
         
         <div className="mt-16 text-center">
           <a 
-            href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-black-history-time-machine-of-truth" 
+            href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine" 
             target="_blank" 
             rel="noopener noreferrer"
             className="rainbow-button-glow text-black font-semibold inline-flex items-center gap-2 relative overflow-hidden px-8 py-4 rounded-md"
@@ -102,7 +102,7 @@ const HowItWorks: React.FC = () => {
               animation: "rainbow-shift 6s linear infinite"
             }}
           >
-            <span className="relative z-10 whitespace-normal">Start Your Black History Time Travel Experience Now</span> <ChevronRight size={20} className="flex-shrink-0" />
+            <span className="relative z-10 whitespace-normal">Begin Your Time Travel Journey with Dr. King</span> <ChevronRight size={20} className="flex-shrink-0" />
           </a>
         </div>
       </div>
