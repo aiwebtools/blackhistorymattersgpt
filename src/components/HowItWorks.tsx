@@ -97,7 +97,7 @@ const HowItWorks: React.FC = () => {
             rel="noopener noreferrer"
             className="rainbow-button-glow text-black font-semibold inline-flex items-center gap-2 relative overflow-hidden px-8 py-4 rounded-md"
             style={{
-              background: "linear-gradient(90deg, #DAA520, #FF8C00, #CD5C5C, #8B4513, #228B22, #B8860B, #D2B48C)",
+              background: "linear-gradient(90deg, #FFD700, #DC143C, #FF4500, #32CD32, #8A2BE2, #FF8C00, #228B22)",
               backgroundSize: "400% 100%",
               animation: "rainbow-shift 6s linear infinite"
             }}

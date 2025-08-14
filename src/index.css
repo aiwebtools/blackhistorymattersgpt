@@ -160,13 +160,13 @@
     overflow: hidden;
     background: linear-gradient(
       45deg,
-      rgba(218, 165, 32, 0.8),  /* Golden */
-      rgba(255, 140, 0, 0.8),   /* Dark Orange */
-      rgba(205, 92, 92, 0.8),   /* Indian Red */
-      rgba(139, 69, 19, 0.8),   /* Saddle Brown */
-      rgba(34, 139, 34, 0.8),   /* Forest Green */
-      rgba(184, 134, 11, 0.8),  /* Dark Goldenrod */
-      rgba(210, 180, 140, 0.8)  /* Tan */
+      rgba(255, 215, 0, 0.9),    /* Bright Gold */
+      rgba(220, 20, 60, 0.9),    /* Crimson */
+      rgba(255, 69, 0, 0.9),     /* Red Orange */
+      rgba(50, 205, 50, 0.9),    /* Lime Green */
+      rgba(138, 43, 226, 0.9),   /* Blue Violet */
+      rgba(255, 140, 0, 0.9),    /* Dark Orange */
+      rgba(34, 139, 34, 0.9)     /* Forest Green */
     );
     background-size: 400% 400%;
     animation: rainbow-background 3s ease infinite;
@@ -189,18 +189,18 @@
     border-style: solid;
     border-image: linear-gradient(
       to right,
-      #DAA520, /* Golden */
+      #FFD700, /* Bright Gold */
+      #DC143C, /* Crimson */
+      #FF4500, /* Red Orange */
+      #32CD32, /* Lime Green */
+      #8A2BE2, /* Blue Violet */
       #FF8C00, /* Dark Orange */
-      #CD5C5C, /* Indian Red */
-      #8B4513, /* Saddle Brown */
-      #228B22, /* Forest Green */
-      #B8860B, /* Dark Goldenrod */
-      #D2B48C  /* Tan */
+      #228B22  /* Forest Green */
     ) 1;
     box-shadow: 
-      0 0 10px rgba(218, 165, 32, 0.5),
-      0 0 20px rgba(255, 140, 0, 0.3),
-      0 0 30px rgba(205, 92, 92, 0.2);
+      0 0 10px rgba(255, 215, 0, 0.6),
+      0 0 20px rgba(220, 20, 60, 0.4),
+      0 0 30px rgba(255, 69, 0, 0.3);
     animation: rainbow-shadow 6s linear infinite;
   }
   
@@ -280,45 +280,45 @@
   @keyframes rainbow-shadow {
     0% {
       box-shadow: 
-        0 0 10px rgba(218, 165, 32, 0.5),
-        0 0 20px rgba(255, 140, 0, 0.3),
-        0 0 30px rgba(205, 92, 92, 0.2);
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 0 20px rgba(220, 20, 60, 0.4),
+        0 0 30px rgba(255, 69, 0, 0.3);
     }
     16.6% {
       box-shadow: 
-        0 0 10px rgba(255, 140, 0, 0.5),
-        0 0 20px rgba(205, 92, 92, 0.3),
-        0 0 30px rgba(139, 69, 19, 0.2);
+        0 0 10px rgba(220, 20, 60, 0.6),
+        0 0 20px rgba(255, 69, 0, 0.4),
+        0 0 30px rgba(50, 205, 50, 0.3);
     }
     33.3% {
       box-shadow: 
-        0 0 10px rgba(205, 92, 92, 0.5),
-        0 0 20px rgba(139, 69, 19, 0.3),
-        0 0 30px rgba(34, 139, 34, 0.2);
+        0 0 10px rgba(255, 69, 0, 0.6),
+        0 0 20px rgba(50, 205, 50, 0.4),
+        0 0 30px rgba(138, 43, 226, 0.3);
     }
     50% {
       box-shadow: 
-        0 0 10px rgba(139, 69, 19, 0.5),
-        0 0 20px rgba(34, 139, 34, 0.3),
-        0 0 30px rgba(184, 134, 11, 0.2);
+        0 0 10px rgba(50, 205, 50, 0.6),
+        0 0 20px rgba(138, 43, 226, 0.4),
+        0 0 30px rgba(255, 140, 0, 0.3);
     }
     66.6% {
       box-shadow: 
-        0 0 10px rgba(34, 139, 34, 0.5),
-        0 0 20px rgba(184, 134, 11, 0.3),
-        0 0 30px rgba(210, 180, 140, 0.2);
+        0 0 10px rgba(138, 43, 226, 0.6),
+        0 0 20px rgba(255, 140, 0, 0.4),
+        0 0 30px rgba(34, 139, 34, 0.3);
     }
     83.3% {
       box-shadow: 
-        0 0 10px rgba(184, 134, 11, 0.5),
-        0 0 20px rgba(210, 180, 140, 0.3),
-        0 0 30px rgba(218, 165, 32, 0.2);
+        0 0 10px rgba(255, 140, 0, 0.6),
+        0 0 20px rgba(34, 139, 34, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.3);
     }
     100% {
       box-shadow: 
-        0 0 10px rgba(210, 180, 140, 0.5),
-        0 0 20px rgba(218, 165, 32, 0.3),
-        0 0 30px rgba(255, 140, 0, 0.2);
+        0 0 10px rgba(34, 139, 34, 0.6),
+        0 0 20px rgba(255, 215, 0, 0.4),
+        0 0 30px rgba(220, 20, 60, 0.3);
     }
   }
   
