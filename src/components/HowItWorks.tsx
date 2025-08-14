@@ -19,28 +19,28 @@ const HowItWorks: React.FC = () => {
     },
     {
       icon: <MapPin className="w-12 h-12 text-amber-600" />,
-      title: "Sacred Time Transition",
-      description: "Experience the righteous time transition ritual as Dr. King initiates your journey to the past."
+      title: "Truth Liberation Sequence",
+      description: "Experience the righteous liberation of hidden truth as Dr. King breaks the chains of historical deception and initiates your awakening journey."
     },
     {
       icon: <Zap className="w-12 h-12 text-amber-600" />,
-      title: "Live the History",
-      description: "Receive a 5000-word immersive narrative where you don't just learn history—you live it with Dr. King as your guide."
+      title: "Experience Liberation Through Truth",
+      description: "Receive a 5000-word immersive narrative that liberates your mind from lies. You don't just learn history—you experience the truth that sets you free, guided by Dr. King's voice of justice."
     },
     {
       icon: <BookOpen className="w-12 h-12 text-amber-600" />,
-      title: "Meet Historical Figures",
-      description: "Engage in conversations with revolutionaries, elders, healers, inventors, and leaders from that era."
+      title: "Walk with Freedom Fighters",
+      description: "Meet the voices of liberation—engage with revolutionaries, freedom fighters, truth-tellers, and unsung heroes who broke the chains of oppression."
     },
     {
       icon: <Image className="w-12 h-12 text-amber-600" />,
-      title: "4K Photorealistic Images",
-      description: "See two stunning 4K photorealistic images of your surroundings after every journey."
+      title: "Witness Truth in 4K Glory",
+      description: "See the hidden truth revealed in stunning 4K photorealistic images that show you what they tried to erase from history."
     },
     {
       icon: <Shuffle className="w-12 h-12 text-amber-600" />,
-      title: "Explore Further",
-      description: "Choose from 10 suggested exploration options to continue your journey through time."
+      title: "Continue Your Awakening",
+      description: "Choose from 10 powerful paths to deepen your liberation journey and uncover more hidden truths that will transform your understanding."
     }
   ];
 
@@ -52,7 +52,7 @@ const HowItWorks: React.FC = () => {
         </h2>
         
         <p className="text-center text-light-gray max-w-3xl mx-auto mb-16">
-          Embark on a truth-revealing journey through time with Dr. Martin Luther King Jr., Voice of the Dream. Follow these steps to begin your transformative adventure through Black history.
+          Embark on a truth-liberating journey that breaks the chains of historical deception. Dr. Martin Luther King Jr., Voice of the Dream, will guide you through the awakening process that reveals the hidden truth and sets your mind free.
         </p>
         
         <div className="relative">
@@ -102,7 +102,7 @@ const HowItWorks: React.FC = () => {
               animation: "rainbow-shift 6s linear infinite"
             }}
           >
-            <span className="relative z-10 whitespace-normal">Journey Through Time Lead By DR Martin Luther King jr</span> <ChevronRight size={20} className="flex-shrink-0" />
+            <span className="relative z-10 whitespace-normal">Break Free Through Truth - Journey with Dr. King</span> <ChevronRight size={20} className="flex-shrink-0" />
           </a>
         </div>
       </div>
