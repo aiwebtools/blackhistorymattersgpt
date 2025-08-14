@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
   
   const handleExplosionComplete = () => {
     // Navigate to the URL after the explosion effect completes
-    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny', '_blank', 'noopener,noreferrer');
+    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-black-history-time-machine-of-truth', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
 
@@ -42,12 +42,12 @@ const HeroSection: React.FC = () => {
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="rainbow-text-glow bg-gradient-to-r from-primary-purple via-vivid-purple to-bright-blue bg-clip-text">
-                AI-Powered Journey Through Native American History
+                AI-Powered Journey Through Black History
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-6">
-              Experience the most advanced AI tools for historical exploration. Our cutting-edge AI time machine brings Native American history to life with Geronimo, Chief of Rainbow Apache Destiny as your guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
+              Experience the most advanced AI tools for historical exploration. Our cutting-edge AI time machine brings Black history to life with our AI guide. Discover authentic stories, cultures, and wisdom from the past—or explore possible futures shaped by your choices.
             </p>
             
             <div className="mb-6 p-4 bg-primary-purple/10 rounded-lg border border-primary-purple/20">
@@ -85,7 +85,7 @@ const HeroSection: React.FC = () => {
               <iframe
                 src="https://www.youtube.com/embed/jVFTGCeuNSM?autoplay=1&mute=0&vq=hd1080&rel=0"
                 className="w-full h-full"
-                title="Native American History Time Machine - AI Tools by AiWebTools.Ai"
+                title="Black History Time Machine - AI Tools by AiWebTools.Ai"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -102,7 +102,7 @@ const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mx-auto mt-12">
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '0.5s' }}>
             <div className="text-primary-purple font-bold text-lg mb-2">AI Time Travel Technology</div>
-            <p className="text-light-gray/80">Advanced AI tools for visiting any year in Native American history with vivid detail</p>
+            <p className="text-light-gray/80">Advanced AI tools for visiting any year in Black history with vivid detail</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1s' }}>

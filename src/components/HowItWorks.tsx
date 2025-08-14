@@ -15,17 +15,17 @@ const HowItWorks: React.FC = () => {
     {
       icon: <CalendarClock className="w-12 h-12 text-primary-purple" />,
       title: "Choose Your Time",
-      description: "Select any year in Native American history you wish to explore."
+      description: "Select any year in Black history you wish to explore."
     },
     {
       icon: <MapPin className="w-12 h-12 text-primary-purple" />,
       title: "Select Your Location",
-      description: "Specify which tribal land or region you want to visit."
+      description: "Specify which community or region you want to visit."
     },
     {
       icon: <Zap className="w-12 h-12 text-primary-purple" />,
       title: "Time Travel Sequence",
-      description: "Experience a sacred teleportation ritual to your chosen time and place."
+      description: "Experience a transformative journey to your chosen time and place."
     },
     {
       icon: <BookOpen className="w-12 h-12 text-primary-purple" />,
@@ -52,7 +52,7 @@ const HowItWorks: React.FC = () => {
         </h2>
         
         <p className="text-center text-light-gray max-w-3xl mx-auto mb-16">
-          Embark on a spiritual journey through time with our Native American History Time Machine. Follow these steps to begin your adventure.
+          Embark on a transformative journey through time with our Black History Time Machine of Truth. Follow these steps to begin your adventure.
         </p>
         
         <div className="relative">
@@ -92,7 +92,7 @@ const HowItWorks: React.FC = () => {
         
         <div className="mt-16 text-center">
           <a 
-            href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny" 
+            href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-black-history-time-machine-of-truth" 
             target="_blank" 
             rel="noopener noreferrer"
             className="rainbow-button-glow text-black font-semibold inline-flex items-center gap-2 relative overflow-hidden px-8 py-4 rounded-md"
@@ -102,7 +102,7 @@ const HowItWorks: React.FC = () => {
               animation: "rainbow-shift 6s linear infinite"
             }}
           >
-            <span className="relative z-10 whitespace-normal">Start Your Native American Time Travel Experience Now</span> <ChevronRight size={20} className="flex-shrink-0" />
+            <span className="relative z-10 whitespace-normal">Start Your Black History Time Travel Experience Now</span> <ChevronRight size={20} className="flex-shrink-0" />
           </a>
         </div>
       </div>

@@ -7,25 +7,25 @@ const Testimonials: React.FC = () => {
     {
       name: "Sarah J.",
       role: "History Teacher",
-      quote: "The Native American History Time Machine has transformed how I teach indigenous history. My students are far more engaged when they can 'experience' historical events through this immersive storytelling.",
+      quote: "The Black History Time Machine of Truth has transformed how I teach Black history. My students are far more engaged when they can 'experience' historical events through this immersive storytelling.",
       stars: 5
     },
     {
       name: "Michael T.",
       role: "Cultural Researcher",
-      quote: "The historical accuracy and attention to detail is impressive. I've studied Native American cultures for years, and this tool provides insights that bring forgotten stories to life.",
+      quote: "The historical accuracy and attention to detail is impressive. I've studied Black history and culture for years, and this tool provides insights that bring forgotten stories to life.",
       stars: 5
     },
     {
       name: "Elena R.",
       role: "Student",
-      quote: "I was struggling with my Native American studies course until I found this. Being able to 'visit' different time periods makes learning so much more interesting and meaningful.",
+      quote: "I was struggling with my Black history studies course until I found this. Being able to 'visit' different time periods makes learning so much more interesting and meaningful.",
       stars: 4
     },
     {
       name: "David K.",
       role: "History Enthusiast",
-      quote: "The Future Tests are mind-blowing! They really make you think about how today's choices affect tomorrow. The storytelling feels authentic and respectful of Native cultures.",
+      quote: "The Future Tests are mind-blowing! They really make you think about how today's choices affect tomorrow. The storytelling feels authentic and respectful of Black history and culture.",
       stars: 5
     }
   ];
@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
         </h2>
         
         <p className="text-center text-light-gray max-w-3xl mx-auto mb-12">
-          Hear from those who have journeyed through Native American history with the Cherokee Chief of Destiny.
+          Hear from those who have journeyed through Black history with our AI Time Machine of Truth.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
