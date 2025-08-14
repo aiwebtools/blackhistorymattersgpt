@@ -102,7 +102,7 @@ const HowItWorks: React.FC = () => {
               animation: "rainbow-shift 6s linear infinite"
             }}
           >
-            <span className="relative z-10 whitespace-normal">Begin Your Time Travel Journey with Dr. King</span> <ChevronRight size={20} className="flex-shrink-0" />
+            <span className="relative z-10 whitespace-normal">Journey Through Time Lead By DR Martin Luther King jr</span> <ChevronRight size={20} className="flex-shrink-0" />
           </a>
         </div>
       </div>

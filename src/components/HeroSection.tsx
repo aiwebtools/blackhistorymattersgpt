@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
                 className="rainbow-button-glow text-white px-8 py-4 rounded-md font-semibold flex items-center justify-center gap-2 text-lg"
                 onClick={handleJourneyButtonClick}
               >
-                Begin Your Time Travel Journey <ArrowRight size={20} />
+                Journey Through Time Lead By DR Martin Luther King jr <ArrowRight size={20} />
               </a>
               
               <a 
