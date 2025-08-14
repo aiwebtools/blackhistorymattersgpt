@@ -323,7 +323,13 @@
         0 0 10px rgba(255, 140, 0, 0.6),
         0 0 20px rgba(34, 139, 34, 0.4),
         0 0 30px rgba(255, 215, 0, 0.3);
-    }
+  }
+
+  .african-heritage-gradient {
+    background: linear-gradient(90deg, #FFD700, #DC143C, #FF4500, #32CD32, #8A2BE2, #FF8C00, #228B22);
+    background-size: 400% 100%;
+    animation: rainbow-shift 6s linear infinite;
+  }
     100% {
       box-shadow: 
         0 0 10px rgba(34, 139, 34, 0.6),

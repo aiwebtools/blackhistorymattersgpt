@@ -13,7 +13,7 @@ const Disclaimer: React.FC = () => {
         
         <div className="max-w-4xl mx-auto">
           <Alert className="mb-6 cyberpunk-card">
-            <AlertTriangle className="h-5 w-5 text-primary-purple" />
+            <AlertTriangle className="h-5 w-5 text-amber-600" />
             <AlertTitle>Important Notice</AlertTitle>
             <AlertDescription className="text-light-gray/80">
               This service is provided for informational, educational, and research purposes only. Please read the following disclaimer carefully before using the Black History Matters Time Machine of Truth.

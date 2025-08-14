@@ -95,14 +95,9 @@ const HowItWorks: React.FC = () => {
             href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="rainbow-button-glow text-black font-semibold inline-flex items-center gap-2 relative overflow-hidden px-8 py-4 rounded-md"
-            style={{
-              background: "linear-gradient(90deg, #FFD700, #DC143C, #FF4500, #32CD32, #8A2BE2, #FF8C00, #228B22)",
-              backgroundSize: "400% 100%",
-              animation: "rainbow-shift 6s linear infinite"
-            }}
+            className="rainbow-button-glow text-black font-semibold inline-flex items-center gap-2 relative overflow-hidden px-8 py-4 rounded-md african-heritage-gradient"
           >
-            <span className="relative z-10 whitespace-normal">Break Free Through Truth - Journey with Dr. King</span> <ChevronRight size={20} className="flex-shrink-0" />
+            <span className="relative z-10 whitespace-normal">Journey Through Time Led By DR Martin Luther King jr</span> <ChevronRight size={20} className="flex-shrink-0" />
           </a>
         </div>
       </div>

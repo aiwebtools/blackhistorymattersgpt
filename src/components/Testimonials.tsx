@@ -7,25 +7,25 @@ const Testimonials: React.FC = () => {
     {
       name: "Sarah J.",
       role: "History Teacher",
-      quote: "The Black History Time Machine of Truth has transformed how I teach Black history. My students are far more engaged when they can 'experience' historical events through this immersive storytelling.",
+      quote: "The Black History Time Machine of Truth has liberated my teaching approach. My students experience a profound awakening when they witness the hidden truths Dr. King reveals through this powerful tool.",
       stars: 5
     },
     {
       name: "Michael T.",
       role: "Cultural Researcher",
-      quote: "The historical accuracy and attention to detail is impressive. I've studied Black history and culture for years, and this tool provides insights that bring forgotten stories to life.",
+      quote: "This tool breaks through historical deception like nothing I've seen. Dr. King's guidance reveals suppressed truths that have been hidden for generations. It's not just learning—it's liberation.",
       stars: 5
     },
     {
       name: "Elena R.",
       role: "Student",
-      quote: "I was struggling with my Black history studies course until I found this. Being able to 'visit' different time periods makes learning so much more interesting and meaningful.",
+      quote: "I was drowning in lies and distorted history until Dr. King's voice liberated my understanding. Now I see the truth clearly—this tool awakened my mind to what they tried to hide.",
       stars: 4
     },
     {
       name: "David K.",
       role: "History Enthusiast",
-      quote: "The Future Tests are mind-blowing! They really make you think about how today's choices affect tomorrow. The storytelling feels authentic and respectful of Black history and culture.",
+      quote: "The Test of the Sacred Times shattered my illusions about the future! Dr. King's wisdom showed me how moral choices shape destiny. This isn't just education—it's spiritual awakening through truth.",
       stars: 5
     }
   ];
@@ -34,11 +34,11 @@ const Testimonials: React.FC = () => {
     <section className="py-16 bg-charcoal/30">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-glow mb-6">
-          What Time Travelers Say
+          Voices of Liberation & Awakening
         </h2>
         
         <p className="text-center text-light-gray max-w-3xl mx-auto mb-12">
-          Hear from those who have journeyed through Black history with our AI Time Machine of Truth.
+          Hear from those who have experienced truth liberation and historical awakening through Dr. King's guidance.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
