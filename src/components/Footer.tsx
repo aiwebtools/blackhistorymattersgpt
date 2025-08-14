@@ -37,7 +37,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, exte
 
 const Footer: React.FC = () => {
   const [showExplosion, setShowExplosion] = useState(false);
-  const [currentAction, setCurrentAction] = useState<'main' | 'timemachine' | 'aitools'>('main');
+  const [currentAction, setCurrentAction] = useState<'main' | 'timemachine' | 'aitools' | 'nativeamerican'>('main');
   
   const handleExplosionClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -57,6 +57,12 @@ const Footer: React.FC = () => {
     setShowExplosion(true);
   };
   
+  const handleNativeAmericanClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentAction('nativeamerican');
+    setShowExplosion(true);
+  };
+  
   const handleExplosionComplete = () => {
     if (currentAction === 'main') {
       window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
@@ -64,6 +70,8 @@ const Footer: React.FC = () => {
       window.open('https://time-machine-gpt.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'aitools') {
       window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
+    } else if (currentAction === 'nativeamerican') {
+      window.open('https://nativeamerican-timemachine.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     }
     setShowExplosion(false);
   };
@@ -114,6 +122,16 @@ const Footer: React.FC = () => {
                    onClick={handleTimeMachineClick}
                  >
                    Time Machine AI Suite
+                 </FooterLink>
+               </li>
+               <li>
+                 <FooterLink 
+                   href="https://nativeamerican-timemachine.lovable.app/?via=aiwebtools" 
+                   external
+                   rainbow
+                   onClick={handleNativeAmericanClick}
+                 >
+                   Native American AI Time Machine
                  </FooterLink>
                </li>
                <li>
