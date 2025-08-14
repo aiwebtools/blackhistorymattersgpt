@@ -25,7 +25,7 @@ const VideoSection: React.FC = () => {
             <iframe
               ref={iframeRef}
               className="w-full h-full"
-              title="Native American History Time Machine Of Destiny"
+              title="Black History Matters Time Machine of Truth"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

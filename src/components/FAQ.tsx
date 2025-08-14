@@ -25,7 +25,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "How do I start using this revolutionary AI time travel tool?",
-      answer: "Getting started with our AI time machine is simple! Click the 'Begin Your Time Travel Journey' button to connect with Dr. Martin Luther King Jr., Voice of the Dream. You'll be asked what date in Black history you wish to teleport to and which Black land, community, or moment in the global struggle for freedom you'd like to explore. Experience why AiWebTools.Ai is considered among the best AI tools for immersive historical education."
+      answer: "Getting started with our AI time machine is simple! Click the 'Journey Through Time Lead By DR Martin Luther King jr' button to connect with Dr. Martin Luther King Jr., Voice of the Dream. You'll be asked what date in Black history you wish to teleport to and which Black land, community, or moment in the global struggle for freedom you'd like to explore. Experience why AiWebTools.Ai is considered among the best AI tools for immersive historical education."
     }
   ];
 
