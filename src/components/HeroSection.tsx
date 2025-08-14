@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-6">
-              <span className="text-amber-600 font-semibold">Break free from historical lies.</span> Experience the most advanced AI time machine for Black history exploration that reveals hidden truths. Travel through time with Dr. Martin Luther King Jr., Voice of the Dream, as your liberation guide. Discover authentic stories, suppressed truths, and ancestral wisdom—or explore possible futures shaped by your moral choices for justice.
+              <span className="text-amber-600 font-semibold">Educational exploration of Black history.</span> Experience an AI-powered educational time machine designed for learning about Black history. Join Dr. Martin Luther King Jr. as your educational guide to explore historical events, figures, and cultural heritage. This tool is designed for educational research and learning purposes only.
             </p>
             
             <div className="mb-6 p-4 bg-gradient-to-r from-amber-600/10 to-orange-500/10 rounded-lg border border-amber-600/20">
@@ -75,10 +75,13 @@ const HeroSection: React.FC = () => {
               </a>
             </div>
 
-            {/* Enhanced privacy notice */}
-            <div className="mt-6 p-3 bg-black/30 rounded-lg border border-amber-600/20">
+            {/* Educational disclaimer */}
+            <div className="mt-6 p-4 bg-black/30 rounded-lg border border-amber-600/20">
+              <p className="text-xs text-light-gray/70 text-center mb-2">
+                ⚠️ <span className="font-medium">Educational Use Only:</span> This AI tool is designed for educational and informational purposes. AI may produce inaccurate outputs - please verify information independently.
+              </p>
               <p className="text-xs text-light-gray/70 text-center">
-                🔒 <span className="font-medium">Private & Secure:</span> AiWebTools.ai protects your privacy. All conversations are private and exclusively between you and the AI.
+                🔒 <span className="font-medium">Private & Secure:</span> All conversations are private and exclusively between you and the AI.
               </p>
             </div>
           </div>
@@ -103,18 +106,18 @@ const HeroSection: React.FC = () => {
         {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mx-auto mt-12">
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '0.5s' }}>
-            <div className="text-amber-600 font-bold text-lg mb-2">Truth Liberation Technology</div>
-            <p className="text-light-gray/80">Revolutionary AI that breaks the chains of historical deception and reveals suppressed Black history</p>
+            <div className="text-amber-600 font-bold text-lg mb-2">Educational AI Technology</div>
+            <p className="text-light-gray/80">Advanced AI designed to help students and researchers explore Black history through interactive learning experiences</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1s' }}>
-            <div className="text-amber-600 font-bold text-lg mb-2">Voice of Liberation Guide</div>
-            <p className="text-light-gray/80">Dr. Martin Luther King Jr., Voice of the Dream, guides your awakening journey through hidden truths</p>
+            <div className="text-amber-600 font-bold text-lg mb-2">Historical Learning Guide</div>
+            <p className="text-light-gray/80">Learn alongside Dr. Martin Luther King Jr. as an educational companion to explore historical events and cultural heritage</p>
           </div>
           
           <div className="cyberpunk-card p-6 flex flex-col items-center animate-float" style={{ animationDelay: '1.5s' }}>
-            <div className="text-amber-600 font-bold text-lg mb-2">Truth Revealed in 4K Glory</div>
-            <p className="text-light-gray/80">Witness the erased history in stunning 4K photorealistic images that show what they tried to hide</p>
+            <div className="text-amber-600 font-bold text-lg mb-2">Interactive Visual Learning</div>
+            <p className="text-light-gray/80">Engage with Black history through immersive visual experiences designed to enhance educational understanding</p>
           </div>
         </div>
       </div>
