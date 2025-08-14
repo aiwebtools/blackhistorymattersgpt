@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             external
             rainbow
           >
-            TIME MACHINE GPT
+            TIME MACHINE AI SUITE
           </FooterLink>
         </div>
         
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                   external
                   rainbow
                 >
-                  Time Machine GPT
+                  Time Machine AI Suite
                 </FooterLink>
               </li>
               <li>
