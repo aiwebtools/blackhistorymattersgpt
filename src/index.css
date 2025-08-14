@@ -33,12 +33,22 @@
   }
   
   body {
-    @apply bg-black text-foreground antialiased;
+    @apply bg-black text-foreground antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   html {
     @apply scroll-smooth;
+    overflow-x: hidden;
+  }
+
+  /* Ensure text is readable on all screen sizes */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
   }
 }
 
