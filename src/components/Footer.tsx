@@ -37,14 +37,34 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, exte
 
 const Footer: React.FC = () => {
   const [showExplosion, setShowExplosion] = useState(false);
+  const [currentAction, setCurrentAction] = useState<'main' | 'timemachine' | 'aitools'>('main');
   
   const handleExplosionClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setCurrentAction('main');
+    setShowExplosion(true);
+  };
+  
+  const handleTimeMachineClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentAction('timemachine');
+    setShowExplosion(true);
+  };
+  
+  const handleAIToolsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentAction('aitools');
     setShowExplosion(true);
   };
   
   const handleExplosionComplete = () => {
-    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    if (currentAction === 'main') {
+      window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    } else if (currentAction === 'timemachine') {
+      window.open('https://time-machine-gpt.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
+    } else if (currentAction === 'aitools') {
+      window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
+    }
     setShowExplosion(false);
   };
   
@@ -60,6 +80,7 @@ const Footer: React.FC = () => {
             className="button-glow text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 max-w-[300px] md:max-w-none text-center justify-center"
             external
             rainbow
+            onClick={handleTimeMachineClick}
           >
             TIME MACHINE AI SUITE
           </FooterLink>
@@ -85,24 +106,26 @@ const Footer: React.FC = () => {
                   Disclaimer
                 </FooterLink>
               </li>
-              <li>
-                <FooterLink 
-                  href="https://time-machine-gpt.lovable.app/?via=aiwebtools" 
-                  external
-                  rainbow
-                >
-                  Time Machine AI Suite
-                </FooterLink>
-              </li>
-              <li>
-                <FooterLink 
-                  href="https://www.aiwebtools.ai" 
-                  external
-                  rainbow
-                >
-                  More AI Tools
-                </FooterLink>
-              </li>
+               <li>
+                 <FooterLink 
+                   href="https://time-machine-gpt.lovable.app/?via=aiwebtools" 
+                   external
+                   rainbow
+                   onClick={handleTimeMachineClick}
+                 >
+                   Time Machine AI Suite
+                 </FooterLink>
+               </li>
+               <li>
+                 <FooterLink 
+                   href="https://www.aiwebtools.ai" 
+                   external
+                   rainbow
+                   onClick={handleAIToolsClick}
+                 >
+                   More AI Tools
+                 </FooterLink>
+               </li>
             </ul>
           </div>
           
@@ -155,6 +178,7 @@ const Footer: React.FC = () => {
             external
             rainbow
             className="mt-4 md:mt-0"
+            onClick={handleAIToolsClick}
           >
             More AI Tools
           </FooterLink>

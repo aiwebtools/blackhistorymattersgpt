@@ -69,15 +69,42 @@ const Header: React.FC = () => {
     setShowExplosion(true);
   };
   
+  const handleTimeMachineClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowExplosion(true);
+  };
+  
+  const handleAIToolsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowExplosion(true);
+  };
+  
   const handleExplosionComplete = () => {
     window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    setShowExplosion(false);
+  };
+  
+  const handleTimeMachineComplete = () => {
+    window.open('https://time-machine-gpt.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
+    setShowExplosion(false);
+  };
+  
+  const handleAIToolsComplete = () => {
+    window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-4 shadow-md">
       {/* African symbol explosion effect */}
-      <AfricanSymbolExplosion isActive={showExplosion} onComplete={handleExplosionComplete} />
+      <AfricanSymbolExplosion 
+        isActive={showExplosion} 
+        onComplete={
+          showExplosion && window.location.href.includes('time-machine-gpt') ? handleTimeMachineComplete :
+          showExplosion && window.location.href.includes('aiwebtools') ? handleAIToolsComplete :
+          handleExplosionComplete
+        } 
+      />
       
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="w-full md:w-auto flex justify-between items-center">
@@ -108,10 +135,10 @@ const Header: React.FC = () => {
           </NavLink>
           <NavLink href="#faq" onClick={closeMenu} rainbow>FAQ</NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
-          <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={closeMenu} rainbow>
+          <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={handleTimeMachineClick} rainbow>
             Time Machine AI Suite
           </NavLink>
-          <NavLink href="https://www.aiwebtools.ai" onClick={closeMenu} rainbow>Liberation AI Tools</NavLink>
+          <NavLink href="https://www.aiwebtools.ai" onClick={handleAIToolsClick} rainbow>Liberation AI Tools</NavLink>
         </nav>
       </div>
     </header>
