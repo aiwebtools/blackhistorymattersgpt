@@ -16,33 +16,33 @@ const Disclaimer: React.FC = () => {
             <AlertTriangle className="h-5 w-5 text-primary-purple" />
             <AlertTitle>Important Notice</AlertTitle>
             <AlertDescription className="text-light-gray/80">
-              This service is provided for informational, educational, and research purposes only. Please read the following disclaimer carefully before using the Native American History Time Machine of Destiny.
+              This service is provided for informational, educational, and research purposes only. Please read the following disclaimer carefully before using the Black History Matters Time Machine of Truth.
             </AlertDescription>
           </Alert>
           
           <div className="space-y-6 text-light-gray/80">
             <p>
-              The Native American History Time Machine of Destiny (referred to as "the Service") is an AI-powered educational and entertainment tool designed to provide immersive storytelling experiences related to Native American history and culture.
+              The Black History Matters Time Machine of Truth (referred to as "the Service") is an AI-powered educational and entertainment tool designed to provide immersive storytelling experiences related to Black history, African American culture, and the global African diaspora. The Service is guided by Dr. Martin Luther King Jr., Voice of the Dream, as an AI representation designed to provide historical education and moral guidance.
             </p>
             
             <h3 className="text-xl font-semibold text-primary-purple">Historical Content</h3>
             <p>
-              While we strive for historical accuracy, the Service provides content for educational and entertainment purposes only. Users should consult academic and cultural sources for comprehensive historical research. The Service makes reasonable efforts to present historically accurate information, but we do not guarantee the complete accuracy of all details presented.
+              While we strive for historical accuracy, the Service provides content for educational and entertainment purposes only. Users should consult academic sources, historical archives, and cultural institutions for comprehensive historical research. The Service makes reasonable efforts to present historically accurate information about Black history, but we do not guarantee the complete accuracy of all details presented. All historical narratives are researched and fact-checked to the best of our ability.
             </p>
             
-            <h3 className="text-xl font-semibold text-primary-purple">Cultural Representation</h3>
+            <h3 className="text-xl font-semibold text-primary-purple">Cultural Representation and Truth Mission</h3>
             <p>
-              The Service aims to present Native American cultures with respect and authenticity. However, it is important to acknowledge that no AI system can fully capture the depth, complexity, and nuance of indigenous cultures and their histories. We encourage users to engage directly with Native American communities, cultural centers, and academic resources for more comprehensive understanding.
+              The Service aims to present Black history and African American culture with respect, authenticity, and truth. Our mission is to reveal hidden Black history that has been erased, distorted, or suppressed throughout history. We are committed to correcting historical wrongs and bringing understanding through truth. However, it is important to acknowledge that no AI system can fully capture the depth, complexity, and nuance of Black cultures and their rich histories. We encourage users to engage directly with Black historians, cultural centers, museums, and academic resources for more comprehensive understanding.
             </p>
             
-            <h3 className="text-xl font-semibold text-primary-purple">Future Scenarios</h3>
+            <h3 className="text-xl font-semibold text-primary-purple">The Test of Two Sacred Fates</h3>
             <p>
-              Any content related to potential future scenarios is entirely speculative and presented for entertainment and educational purposes only. These scenarios do not constitute predictions, forecasts, or advice regarding future events. The "Test of Two Sacred Fates" feature is a fictional narrative device designed to encourage critical thinking about the potential consequences of present-day decisions.
+              Any content related to potential future scenarios is entirely speculative and presented for entertainment and educational purposes only. These scenarios do not constitute predictions, forecasts, or advice regarding future events. "The Test of the Sacred Times" feature is a spiritual and moral trial designed to encourage critical thinking about moral choices, resource stewardship, technology use, and global unity. These future scenarios are based on moral choices and consequence, designed to inspire reflection on how today's decisions affect tomorrow.
             </p>
             
-            <h3 className="text-xl font-semibold text-primary-purple">Image Generation</h3>
+            <h3 className="text-xl font-semibold text-primary-purple">4K Photorealistic Image Generation</h3>
             <p>
-              Images generated by the Service are AI-created approximations of historical and cultural content. These images are intended to enhance the storytelling experience and should not be considered historically accurate reproductions or documentary evidence.
+              Images generated by the Service are AI-created 4K photorealistic representations of historical and cultural content. These images are intended to enhance the storytelling experience and provide visual context for historical narratives. While created with attention to historical accuracy, these images should not be considered historically accurate reproductions or documentary evidence. All images are generated to avoid copyrighted elements and maintain historical authenticity.
             </p>
             
             <h3 className="text-xl font-semibold text-primary-purple">Limitation of Liability</h3>
@@ -50,13 +50,13 @@ const Disclaimer: React.FC = () => {
               AiWebTools.Ai and its affiliates shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages resulting from your use of the Service or any content provided therein. By using the Service, you agree to indemnify and hold harmless AiWebTools.Ai and its affiliates from any claims arising from your use of the Service.
             </p>
             
-            <h3 className="text-xl font-semibold text-primary-purple">User Responsibility</h3>
+            <h3 className="text-xl font-semibold text-primary-purple">User Responsibility and Educational Purpose</h3>
             <p>
-              Users are responsible for their use of the Service and should exercise critical thinking when consuming any historical or cultural content. The Service is not a substitute for professional research or consultation with cultural experts.
+              Users are responsible for their use of the Service and should exercise critical thinking when consuming any historical or cultural content. The Service is designed for education, research, and moral awakening, not as a substitute for professional research or consultation with historical experts. This tool was created to correct the wrongs of the past and bring unity and understanding to a world desperately in need of moral compass and historical truth.
             </p>
             
             <p className="font-semibold">
-              By using the Native American History Time Machine of Destiny, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.
+              By using the Black History Matters Time Machine of Truth, you acknowledge that you have read, understood, and agree to be bound by this disclaimer. You understand this is an educational tool designed to reveal hidden Black history and inspire moral awakening through truth.
             </p>
             
             <div className="mt-8 p-4 bg-primary-purple/10 rounded-lg border border-primary-purple/20">

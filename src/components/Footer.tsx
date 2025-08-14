@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
   };
   
   const handleExplosionComplete = () => {
-    window.open('https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny', '_blank', 'noopener,noreferrer');
+    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
   
@@ -71,13 +71,13 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <FooterLink 
-                  href="https://chatgpt.com/g/g-67f5b059be608191a9faa94c7d8dfb81-native-american-history-time-machine-of-destiny"
+                  href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
                   external
                   rainbow
                   className="max-w-[300px] md:max-w-none"
                   onClick={handleExplosionClick}
                 >
-                  Speak to Geronimo
+                  Journey Through Time Lead By DR Martin Luther King jr
                 </FooterLink>
               </li>
               <li>
@@ -147,7 +147,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-10 pt-6 border-t border-primary-purple/20 flex flex-col md:flex-row justify-between items-center">
           <p className="text-light-gray/50 text-sm">
-            © {new Date().getFullYear()} Native American History Time Machine Of Destiny. All rights reserved.
+            © {new Date().getFullYear()} Black History Matters Time Machine of Truth. All rights reserved.
           </p>
           
           <FooterLink
