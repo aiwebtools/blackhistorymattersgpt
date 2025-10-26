@@ -6,7 +6,7 @@ const VideoSection: React.FC = () => {
 
   useEffect(() => {
     // Set YouTube parameters for autoplay and quality
-    const embedUrl = new URL('https://www.youtube.com/embed/jVFTGCeuNSM');
+    const embedUrl = new URL('https://www.youtube.com/embed/PC_Q_IQqNd8');
     embedUrl.searchParams.append('autoplay', '1');
     embedUrl.searchParams.append('mute', '0');
     embedUrl.searchParams.append('vq', 'hd1080');
