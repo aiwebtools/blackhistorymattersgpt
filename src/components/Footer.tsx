@@ -187,9 +187,14 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-10 pt-6 border-t border-primary-purple/20 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-light-gray/50 text-sm">
-            © {new Date().getFullYear()} Black History Matters Time Machine of Truth. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center md:items-start">
+            <p className="text-light-gray/50 text-sm">
+              © {new Date().getFullYear()} Black History Matters Time Machine of Truth. All rights reserved.
+            </p>
+            <p className="text-light-gray/40 text-xs mt-1">
+              Powered by ChatGPT
+            </p>
+          </div>
           
           <FooterLink
             href="https://www.aiwebtools.ai"
