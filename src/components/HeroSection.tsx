@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-light-gray mb-6">
-              <span className="text-amber-600 font-semibold">Educational exploration of Black history.</span> Experience an AI-powered educational time machine designed for learning about Black history. Join Dr. Martin Luther King Jr. as your educational guide to explore historical events, figures, and cultural heritage. This tool is designed for educational research and learning purposes only.
+              Step into a time travel simulation adventure dedicated to preserving the untold stories of Black history. Discover the remarkable people and pivotal moments erased from history books, and experience an educational journey that brings hidden narratives from around the world back to life.
             </p>
             
             <div className="mb-6 p-4 bg-gradient-to-r from-amber-600/10 to-orange-500/10 rounded-lg border border-amber-600/20">
