@@ -138,7 +138,7 @@ const Header: React.FC = () => {
           <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={handleTimeMachineClick} rainbow>
             Time Machine AI Suite
           </NavLink>
-          <NavLink href="https://www.aiwebtools.ai" onClick={handleAIToolsClick} rainbow>Liberation AI Tools</NavLink>
+          <NavLink href="https://www.aiwebtools.ai" onClick={handleAIToolsClick} rainbow>More AI Tools</NavLink>
         </nav>
       </div>
     </header>
