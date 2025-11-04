@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import VideoSection from '@/components/VideoSection';
 import HowItWorks from '@/components/HowItWorks';
-import Testimonials from '@/components/Testimonials';
+
 import FAQ from '@/components/FAQ';
 import Disclaimer from '@/components/Disclaimer';
 import AfricanSymbol from '@/components/AfricanSymbol';
@@ -68,7 +68,6 @@ const Index = () => {
         <HeroSection />
         <VideoSection />
         <HowItWorks />
-        <Testimonials />
         <FAQ />
         <Disclaimer />
       </main>
