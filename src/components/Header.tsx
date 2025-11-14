@@ -80,7 +80,7 @@ const Header: React.FC = () => {
   };
   
   const handleExplosionComplete = () => {
-    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    window.open('https://gemini.google.com/gem/4e45b3038f6c', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
   
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
           isMobile && !isMenuOpen ? "hidden" : "mt-4 md:mt-0"
         )}>
           <NavLink 
-            href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
+            href="https://gemini.google.com/gem/4e45b3038f6c"
             className="rainbow-button-glow rounded-md font-semibold text-center max-w-[320px] md:max-w-none"
             onClick={handleExplosionClick}
           >
