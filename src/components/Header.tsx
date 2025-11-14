@@ -3,9 +3,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import AfricanSymbolExplosion from './AfricanSymbolExplosion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface NavLinkProps {
   href: string;
@@ -54,6 +60,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showExplosion, setShowExplosion] = useState(false);
+  const [explosionTarget, setExplosionTarget] = useState<'chatgpt' | 'gemini' | 'timemachine' | 'aitools'>('chatgpt');
   const isMobile = useIsMobile();
 
   const toggleMenu = () => {
@@ -64,22 +71,36 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
   
-  const handleExplosionClick = (e: React.MouseEvent) => {
+  const handleChatGPTClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setExplosionTarget('chatgpt');
+    setShowExplosion(true);
+  };
+  
+  const handleGeminiClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setExplosionTarget('gemini');
     setShowExplosion(true);
   };
   
   const handleTimeMachineClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setExplosionTarget('timemachine');
     setShowExplosion(true);
   };
   
   const handleAIToolsClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setExplosionTarget('aitools');
     setShowExplosion(true);
   };
   
-  const handleExplosionComplete = () => {
+  const handleChatGPTComplete = () => {
+    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    setShowExplosion(false);
+  };
+  
+  const handleGeminiComplete = () => {
     window.open('https://gemini.google.com/gem/4e45b3038f6c', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
@@ -100,9 +121,10 @@ const Header: React.FC = () => {
       <AfricanSymbolExplosion 
         isActive={showExplosion} 
         onComplete={
-          showExplosion && window.location.href.includes('time-machine-gpt') ? handleTimeMachineComplete :
-          showExplosion && window.location.href.includes('aiwebtools') ? handleAIToolsComplete :
-          handleExplosionComplete
+          explosionTarget === 'chatgpt' ? handleChatGPTComplete :
+          explosionTarget === 'gemini' ? handleGeminiComplete :
+          explosionTarget === 'timemachine' ? handleTimeMachineComplete :
+          handleAIToolsComplete
         } 
       />
       
@@ -126,13 +148,26 @@ const Header: React.FC = () => {
           "flex flex-col md:flex-row w-full md:w-auto justify-center gap-2",
           isMobile && !isMenuOpen ? "hidden" : "mt-4 md:mt-0"
         )}>
-          <NavLink 
-            href="https://gemini.google.com/gem/4e45b3038f6c"
-            className="rainbow-button-glow rounded-md font-semibold text-center max-w-[320px] md:max-w-none"
-            onClick={handleExplosionClick}
-          >
-            Black History Matters AI Time Machine - Led By DR Martin Luther King jr
-          </NavLink>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="rainbow-button-glow text-white rounded-md font-semibold text-center max-w-[320px] md:max-w-none px-4 py-2 text-sm md:text-base flex items-center gap-2 whitespace-normal">
+              Black History Matters AI Time Machine - Led By DR Martin Luther King jr
+              <ChevronDown className="h-4 w-4 flex-shrink-0" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-background border-primary-purple/20 z-[100]">
+              <DropdownMenuItem 
+                onClick={handleChatGPTClick}
+                className="cursor-pointer hover:bg-primary-purple/10"
+              >
+                ChatGPT Version
+              </DropdownMenuItem>
+              <DropdownMenuItem 
+                onClick={handleGeminiClick}
+                className="cursor-pointer hover:bg-primary-purple/10"
+              >
+                Gemini Powered Version
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <NavLink href="#faq" onClick={closeMenu} rainbow>FAQ</NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
           <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={handleTimeMachineClick} rainbow>
