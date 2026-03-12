@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
     } else if (currentAction === 'timemachine') {
       window.open('https://time-machine-gpt.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'aitools') {
-      window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
+      window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'nativeamerican') {
       window.open('https://nativeamerican-timemachine.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     }
