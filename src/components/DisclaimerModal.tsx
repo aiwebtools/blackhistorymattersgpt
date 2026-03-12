@@ -31,7 +31,7 @@ const DisclaimerModal: React.FC = () => {
   };
 
   const handleDecline = () => {
-    window.location.href = 'https://www.aiwebtools.ai';
+    window.location.href = 'https://aiwebtools.lovable.app/?via=aiwebtools';
   };
 
   return (

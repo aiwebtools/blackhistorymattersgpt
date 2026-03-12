@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
           </div>
           
           <FooterLink
-            href="https://www.aiwebtools.ai"
+            href="https://aiwebtools.lovable.app/?via=aiwebtools"
             external
             rainbow
             className="mt-4 md:mt-0"

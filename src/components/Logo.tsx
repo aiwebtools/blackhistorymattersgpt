@@ -24,7 +24,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
           </div>
         </div>
         <div className="mt-2 text-center text-xs text-light-gray/70">
-          Presented by <a href="https://www.aiwebtools.ai" className="hover:text-primary-purple transition-colors">AiWebTools.Ai</a>
+          Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-primary-purple transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>
         </div>
       </div>
     </div>
