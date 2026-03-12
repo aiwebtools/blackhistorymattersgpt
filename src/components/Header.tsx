@@ -111,7 +111,7 @@ const Header: React.FC = () => {
   };
   
   const handleAIToolsComplete = () => {
-    window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
+    window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
   
