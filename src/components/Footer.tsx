@@ -136,12 +136,12 @@ const Footer: React.FC = () => {
                </li>
                <li>
                  <FooterLink 
-                   href="https://www.aiwebtools.ai" 
-                   external
-                   rainbow
-                   onClick={handleAIToolsClick}
-                 >
-                   More AI Tools
+                    href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+                    external
+                    rainbow
+                    onClick={handleAIToolsClick}
+                  >
+                    More AI Tools
                  </FooterLink>
                </li>
             </ul>
