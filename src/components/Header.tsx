@@ -31,8 +31,8 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2 text-sm md:text-base whitespace-normal",
-          rainbow && "rainbow-button-glow text-white rounded-md font-semibold text-center",
+          "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-3 md:py-2 text-sm md:text-base whitespace-normal touch-manipulation w-full md:w-auto text-center",
+          rainbow && "rainbow-button-glow text-white rounded-md font-semibold",
           className
         )}
         onClick={onClick}
@@ -46,9 +46,9 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
     <a 
       href={href}
       className={cn(
-        "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-2 text-sm md:text-base whitespace-normal",
-        rainbow && "rainbow-button-glow text-white rounded-md font-semibold text-center",
-        className
+          "text-light-gray hover:text-primary-purple transition-colors duration-300 px-4 py-3 md:py-2 text-sm md:text-base whitespace-normal touch-manipulation w-full md:w-auto text-center",
+          rainbow && "rainbow-button-glow text-white rounded-md font-semibold",
+          className
       )}
       onClick={onClick}
     >
@@ -111,12 +111,12 @@ const Header: React.FC = () => {
   };
   
   const handleAIToolsComplete = () => {
-    window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
+    window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     setShowExplosion(false);
   };
   
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-4 shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-primary-purple/20 py-3 md:py-4 shadow-md">
       {/* African symbol explosion effect */}
       <AfricanSymbolExplosion 
         isActive={showExplosion} 
@@ -130,39 +130,39 @@ const Header: React.FC = () => {
       
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="w-full md:w-auto flex justify-between items-center">
-          <div className="mx-auto md:mx-0 max-w-[300px] md:max-w-none">
-            <Logo className="transform scale-90 md:scale-100" />
+          <div className="mx-auto md:mx-0 max-w-[250px] sm:max-w-[300px] md:max-w-none">
+            <Logo className="transform scale-75 sm:scale-90 md:scale-100" />
           </div>
           {isMobile && (
             <button 
-              className="text-light-gray absolute right-4 top-4 p-2 focus:outline-none" 
+              className="text-light-gray absolute right-4 top-3 p-2 focus:outline-none z-[60] touch-manipulation" 
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           )}
         </div>
         
         <nav className={cn(
-          "flex flex-col md:flex-row w-full md:w-auto justify-center gap-2",
-          isMobile && !isMenuOpen ? "hidden" : "mt-4 md:mt-0"
+          "flex flex-col md:flex-row w-full md:w-auto justify-center items-center gap-1 md:gap-2",
+          isMobile && !isMenuOpen ? "hidden" : "mt-3 md:mt-0"
         )}>
           <DropdownMenu>
-            <DropdownMenuTrigger className="rainbow-button-glow text-white rounded-md font-semibold text-center max-w-[320px] md:max-w-none px-4 py-2 text-sm md:text-base flex items-center gap-2 whitespace-normal">
+            <DropdownMenuTrigger className="rainbow-button-glow text-white rounded-md font-semibold text-center w-full md:w-auto px-4 py-3 md:py-2 text-sm md:text-base flex items-center justify-center gap-2 whitespace-normal touch-manipulation active:scale-[0.98] transition-transform">
               Black History Matters AI Time Machine - Led By DR Martin Luther King jr
               <ChevronDown className="h-4 w-4 flex-shrink-0" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background border-primary-purple/20 z-[100]">
+            <DropdownMenuContent className="bg-black border border-primary-purple/30 z-[100] min-w-[200px]" sideOffset={8}>
               <DropdownMenuItem 
                 onClick={handleChatGPTClick}
-                className="cursor-pointer hover:bg-primary-purple/10"
+                className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white"
               >
                 ChatGPT Version
               </DropdownMenuItem>
               <DropdownMenuItem 
                 onClick={handleGeminiClick}
-                className="cursor-pointer hover:bg-primary-purple/10"
+                className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white"
               >
                 Gemini Powered Version
               </DropdownMenuItem>
@@ -173,7 +173,7 @@ const Header: React.FC = () => {
           <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={handleTimeMachineClick} rainbow>
             Time Machine AI Suite
           </NavLink>
-          <NavLink href="https://www.aiwebtools.ai" onClick={handleAIToolsClick} rainbow>More AI Tools</NavLink>
+          <NavLink href="https://aiwebtools.lovable.app/?via=aiwebtools" onClick={handleAIToolsClick} rainbow>More AI Tools</NavLink>
         </nav>
       </div>
     </header>

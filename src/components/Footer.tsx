@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
     } else if (currentAction === 'timemachine') {
       window.open('https://time-machine-gpt.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'aitools') {
-      window.open('https://www.aiwebtools.ai', '_blank', 'noopener,noreferrer');
+      window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'nativeamerican') {
       window.open('https://nativeamerican-timemachine.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     }
@@ -136,12 +136,12 @@ const Footer: React.FC = () => {
                </li>
                <li>
                  <FooterLink 
-                   href="https://www.aiwebtools.ai" 
-                   external
-                   rainbow
-                   onClick={handleAIToolsClick}
-                 >
-                   More AI Tools
+                    href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+                    external
+                    rainbow
+                    onClick={handleAIToolsClick}
+                  >
+                    More AI Tools
                  </FooterLink>
                </li>
             </ul>
@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
           </div>
           
           <FooterLink
-            href="https://www.aiwebtools.ai"
+            href="https://aiwebtools.lovable.app/?via=aiwebtools"
             external
             rainbow
             className="mt-4 md:mt-0"
