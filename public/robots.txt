@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://blackhistorymattersgpt.lovable.app/sitemap.xml
