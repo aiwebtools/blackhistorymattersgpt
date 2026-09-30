@@ -14,7 +14,125 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      journey_images: {
+        Row: {
+          alt_text: string
+          created_at: string
+          id: string
+          image_url: string
+          journey_id: string
+          message_id: string
+          prompt: string
+          user_id: string
+        }
+        Insert: {
+          alt_text: string
+          created_at?: string
+          id?: string
+          image_url: string
+          journey_id: string
+          message_id: string
+          prompt: string
+          user_id: string
+        }
+        Update: {
+          alt_text?: string
+          created_at?: string
+          id?: string
+          image_url?: string
+          journey_id?: string
+          message_id?: string
+          prompt?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journey_images_journey_id_fkey"
+            columns: ["journey_id"]
+            isOneToOne: false
+            referencedRelation: "journeys"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "journey_images_message_id_fkey"
+            columns: ["message_id"]
+            isOneToOne: false
+            referencedRelation: "journey_messages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journey_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          journey_id: string
+          role: string
+          sources: Json
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          journey_id: string
+          role: string
+          sources?: Json
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          journey_id?: string
+          role?: string
+          sources?: Json
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journey_messages_journey_id_fkey"
+            columns: ["journey_id"]
+            isOneToOne: false
+            referencedRelation: "journeys"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journeys: {
+        Row: {
+          created_at: string
+          destination_date: string | null
+          destination_place: string | null
+          id: string
+          status: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          destination_date?: string | null
+          destination_place?: string | null
+          id?: string
+          status?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          destination_date?: string | null
+          destination_place?: string | null
+          id?: string
+          status?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
