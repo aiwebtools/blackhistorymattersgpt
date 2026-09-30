@@ -69,6 +69,7 @@ export type Database = {
           id: string
           journey_id: string
           role: string
+          sdk_message_id: string | null
           sources: Json
           user_id: string
         }
@@ -78,6 +79,7 @@ export type Database = {
           id?: string
           journey_id: string
           role: string
+          sdk_message_id?: string | null
           sources?: Json
           user_id: string
         }
@@ -87,6 +89,7 @@ export type Database = {
           id?: string
           journey_id?: string
           role?: string
+          sdk_message_id?: string | null
           sources?: Json
           user_id?: string
         }
