@@ -1,0 +1,2 @@
+ALTER TABLE public.journey_messages ADD COLUMN sdk_message_id TEXT;
+CREATE UNIQUE INDEX journey_messages_journey_sdk_id_idx ON public.journey_messages(journey_id, sdk_message_id) WHERE sdk_message_id IS NOT NULL;

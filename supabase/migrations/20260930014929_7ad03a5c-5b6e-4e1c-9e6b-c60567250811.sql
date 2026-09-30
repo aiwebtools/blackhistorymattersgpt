@@ -1,0 +1,3 @@
+CREATE POLICY "Travelers can view their generated journey images" ON storage.objects FOR SELECT TO authenticated USING (bucket_id = 'journey-images' AND (storage.foldername(name))[1] = auth.uid()::text);
+CREATE POLICY "Travelers can upload their generated journey images" ON storage.objects FOR INSERT TO authenticated WITH CHECK (bucket_id = 'journey-images' AND (storage.foldername(name))[1] = auth.uid()::text);
+CREATE POLICY "Travelers can delete their generated journey images" ON storage.objects FOR DELETE TO authenticated USING (bucket_id = 'journey-images' AND (storage.foldername(name))[1] = auth.uid()::text);
