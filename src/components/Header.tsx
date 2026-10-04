@@ -154,6 +154,12 @@ const Header: React.FC = () => {
               <ChevronDown className="h-4 w-4 flex-shrink-0" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-black border border-primary-purple/30 z-[100] min-w-[200px]" sideOffset={8}>
+              <DropdownMenuItem
+                onClick={() => window.location.assign('/journey')}
+                className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white font-semibold"
+              >
+                Travel Here — In-Site Version
+              </DropdownMenuItem>
               <DropdownMenuItem 
                 onClick={handleChatGPTClick}
                 className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white"

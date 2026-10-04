@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
   
   const handleExplosionComplete = () => {
     // Navigate to the URL after the explosion effect completes
-    window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    window.location.assign('/journey');
     setShowExplosion(false);
   };
 
