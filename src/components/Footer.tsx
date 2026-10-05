@@ -37,11 +37,23 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children, className, exte
 
 const Footer: React.FC = () => {
   const [showExplosion, setShowExplosion] = useState(false);
-  const [currentAction, setCurrentAction] = useState<'main' | 'timemachine' | 'aitools' | 'nativeamerican'>('main');
+  const [currentAction, setCurrentAction] = useState<'insite' | 'chatgpt' | 'gemini' | 'timemachine' | 'aitools' | 'nativeamerican'>('insite');
   
-  const handleExplosionClick = (e: React.MouseEvent) => {
+  const handleInsiteClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setCurrentAction('main');
+    setCurrentAction('insite');
+    setShowExplosion(true);
+  };
+  
+  const handleChatGPTClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentAction('chatgpt');
+    setShowExplosion(true);
+  };
+  
+  const handleGeminiClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentAction('gemini');
     setShowExplosion(true);
   };
   
@@ -64,8 +76,12 @@ const Footer: React.FC = () => {
   };
   
   const handleExplosionComplete = () => {
-    if (currentAction === 'main') {
+    if (currentAction === 'insite') {
+      window.location.assign('/journey');
+    } else if (currentAction === 'chatgpt') {
       window.open('https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine', '_blank', 'noopener,noreferrer');
+    } else if (currentAction === 'gemini') {
+      window.open('https://gemini.google.com/gem/4e45b3038f6c', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'timemachine') {
       window.open('https://time-machine-gpt.lovable.app/?via=aiwebtools', '_blank', 'noopener,noreferrer');
     } else if (currentAction === 'aitools') {
@@ -100,15 +116,36 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
                <li>
                  <FooterLink 
-                   href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
-                   external
+                   href="/journey"
                    rainbow
                    className="max-w-[300px] md:max-w-none"
-                   onClick={handleExplosionClick}
+                   onClick={handleInsiteClick}
                  >
-                   Black History Matters AI Time Machine - Led By DR Martin Luther King jr
-                 </FooterLink>
+                   Black History Matters AI Time Machine - Led By DR Martin Luther King jr (In-Site Version)
+                  </FooterLink>
                </li>
+              <li>
+                <FooterLink 
+                  href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine"
+                  external
+                  rainbow
+                  className="max-w-[300px] md:max-w-none"
+                  onClick={handleChatGPTClick}
+                >
+                  ChatGPT Version
+                </FooterLink>
+              </li>
+              <li>
+                <FooterLink 
+                  href="https://gemini.google.com/gem/4e45b3038f6c"
+                  external
+                  rainbow
+                  className="max-w-[300px] md:max-w-none"
+                  onClick={handleGeminiClick}
+                >
+                  Gemini Powered Version
+                </FooterLink>
+              </li>
               <li>
                 <FooterLink href="#disclaimer" rainbow>
                   Disclaimer
