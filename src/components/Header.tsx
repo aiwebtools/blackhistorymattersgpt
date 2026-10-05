@@ -125,6 +125,7 @@ const Header: React.FC = () => {
       <AfricanSymbolExplosion 
         isActive={showExplosion} 
         onComplete={
+          explosionTarget === 'insite' ? handleInsiteComplete :
           explosionTarget === 'chatgpt' ? handleChatGPTComplete :
           explosionTarget === 'gemini' ? handleGeminiComplete :
           explosionTarget === 'timemachine' ? handleTimeMachineComplete :
@@ -152,32 +153,15 @@ const Header: React.FC = () => {
           "flex flex-col md:flex-row w-full md:w-auto justify-center items-center gap-1 md:gap-2",
           isMobile && !isMenuOpen ? "hidden" : "mt-3 md:mt-0"
         )}>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="rainbow-button-glow text-white rounded-md font-semibold text-center w-full md:w-auto px-4 py-3 md:py-2 text-sm md:text-base flex items-center justify-center gap-2 whitespace-normal touch-manipulation active:scale-[0.98] transition-transform">
-              Black History Matters AI Time Machine - Led By DR Martin Luther King jr
-              <ChevronDown className="h-4 w-4 flex-shrink-0" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-black border border-primary-purple/30 z-[100] min-w-[200px]" sideOffset={8}>
-              <DropdownMenuItem
-                onClick={() => window.location.assign('/journey')}
-                className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white font-semibold"
-              >
-                Travel Here — In-Site Version
-              </DropdownMenuItem>
-              <DropdownMenuItem 
-                onClick={handleChatGPTClick}
-                className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white"
-              >
-                ChatGPT Version
-              </DropdownMenuItem>
-              <DropdownMenuItem 
-                onClick={handleGeminiClick}
-                className="cursor-pointer hover:bg-primary-purple/10 focus:bg-primary-purple/10 py-3 px-4 text-sm touch-manipulation text-white"
-              >
-                Gemini Powered Version
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <NavLink href="/journey" onClick={handleInsiteClick} rainbow>
+            Black History Matters AI Time Machine - Led By DR Martin Luther King jr
+          </NavLink>
+          <NavLink href="https://chatgpt.com/g/g-686a172232648191b2fe8d0224e5d997-black-history-matters-time-machine" onClick={handleChatGPTClick} rainbow>
+            ChatGPT Version
+          </NavLink>
+          <NavLink href="https://gemini.google.com/gem/4e45b3038f6c" onClick={handleGeminiClick} rainbow>
+            Gemini Powered Version
+          </NavLink>
           <NavLink href="#faq" onClick={closeMenu} rainbow>FAQ</NavLink>
           <NavLink href="#disclaimer" onClick={closeMenu} rainbow>Disclaimer</NavLink>
           <NavLink href="https://time-machine-gpt.lovable.app/?via=aiwebtools" onClick={handleTimeMachineClick} rainbow>
