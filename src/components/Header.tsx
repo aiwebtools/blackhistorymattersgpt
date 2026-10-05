@@ -5,13 +5,6 @@ import Logo from './Logo';
 import { cn } from '@/lib/utils';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import AfricanSymbolExplosion from './AfricanSymbolExplosion';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 interface NavLinkProps {
   href: string;
@@ -60,7 +53,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, className, onClick, r
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showExplosion, setShowExplosion] = useState(false);
-  const [explosionTarget, setExplosionTarget] = useState<'chatgpt' | 'gemini' | 'timemachine' | 'aitools'>('chatgpt');
+  const [explosionTarget, setExplosionTarget] = useState<'insite' | 'chatgpt' | 'gemini' | 'timemachine' | 'aitools'>('insite');
   const isMobile = useIsMobile();
 
   const toggleMenu = () => {
@@ -69,6 +62,12 @@ const Header: React.FC = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+  
+  const handleInsiteClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setExplosionTarget('insite');
+    setShowExplosion(true);
   };
   
   const handleChatGPTClick = (e: React.MouseEvent) => {
@@ -93,6 +92,11 @@ const Header: React.FC = () => {
     e.preventDefault();
     setExplosionTarget('aitools');
     setShowExplosion(true);
+  };
+  
+  const handleInsiteComplete = () => {
+    window.location.assign('/journey');
+    setShowExplosion(false);
   };
   
   const handleChatGPTComplete = () => {
