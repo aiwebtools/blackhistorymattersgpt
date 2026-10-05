@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import AfricanSymbolExplosion from './AfricanSymbolExplosion';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface NavLinkProps {
