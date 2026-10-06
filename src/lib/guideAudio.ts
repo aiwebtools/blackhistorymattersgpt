@@ -111,7 +111,7 @@ export function cleanForSpeech(text: string) {
 }
 
 /** Split long text into speakable chunks at paragraph or sentence boundaries. */
-export function splitForSpeech(text: string, first = 260, max = 1400) {
+export function splitForSpeech(text: string, first = 220, max = 1400) {
   const out: string[] = [];
   let rest = speakableBody(text);
   let min = first;
@@ -124,7 +124,7 @@ export function splitForSpeech(text: string, first = 260, max = 1400) {
     }
     out.push(rest.slice(0, cut));
     rest = rest.slice(cut);
-    min = 900;
+    min = out.length === 1 ? 500 : 900;
   }
   return out.filter((c) => cleanForSpeech(c));
 }
@@ -134,7 +134,7 @@ type Fetcher = (text: string) => Promise<ArrayBuffer>;
 
 export class VoiceQueue {
   private items: Promise<AudioBuffer | null>[] = [];
-  private lastFetch: Promise<unknown> = Promise.resolve();
+  private fetches: Promise<unknown>[] = [];
   private playing = false;
   private open = false;
   private gen = 0;
@@ -158,12 +158,13 @@ export class VoiceQueue {
     const t = cleanForSpeech(text);
     if (!t) return;
     const g = this.gen;
-    // Fetch sequentially (avoids rate limits); playback overlaps with the next fetch.
-    const p = this.lastFetch
+    // At most two voice requests in flight: the next part is ready before the current one ends.
+    const gate = this.fetches.length >= 2 ? this.fetches[this.fetches.length - 2] : Promise.resolve();
+    const p = gate
       .catch(() => undefined)
       .then(() => (g === this.gen ? this.fetcher(t) : null))
       .then(async (ab) => (ab && g === this.gen ? await getAudioCtx().decodeAudioData(ab) : null));
-    this.lastFetch = p;
+    this.fetches.push(p);
     this.items.push(p);
     void this.pump(g);
   }
@@ -177,7 +178,7 @@ export class VoiceQueue {
   stop() {
     this.gen++;
     this.items = [];
-    this.lastFetch = Promise.resolve();
+    this.fetches = [];
     this.open = false;
     try { this.source?.stop(); } catch { /* already stopped */ }
     this.source = undefined;

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Conversation, ConversationContent, ConversationScrollButton } from "@/components/ai-elements/conversation";
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
 import { Shimmer } from "@/components/ai-elements/shimmer";
@@ -201,6 +201,7 @@ export default function Journey() {
     // Speak the reply aloud while it streams, in order, paragraph by paragraph.
     const voice = voiceRef.current!;
     let spoken = 0;
+    let parts = 0;
     let voiceStarted = false;
     const feedVoice = (final: boolean) => {
       if (!voiceOnRef.current) return;
@@ -209,7 +210,7 @@ export default function Journey() {
       while (true) {
         const rest = body.slice(spoken);
         if (final) { if (rest.trim()) voice.enqueue(rest); spoken = body.length; voice.finish(); return; }
-        const min = spoken === 0 ? 260 : 900;
+        const min = parts === 0 ? 220 : parts === 1 ? 500 : 900;
         if (rest.length < min) return;
         let cut = rest.indexOf("\n", min);
         if (cut < 0 || cut > 1600) {
@@ -218,7 +219,7 @@ export default function Journey() {
         }
         if (cut < 0) return;
         voice.enqueue(rest.slice(0, cut));
-        spoken += cut;
+        spoken += cut; parts++;
       }
     };
     try {
@@ -512,6 +513,8 @@ export default function Journey() {
 
       <Dialog open={!!viewer} onOpenChange={(o) => !o && setViewer(null)}>
         <DialogContent className="max-w-5xl p-2 bg-black border-amber-500/30">
+          <DialogTitle className="sr-only">Scene image</DialogTitle>
+          <DialogDescription className="sr-only">{viewer?.alt_text ?? "Generated scene"}</DialogDescription>
           {viewer && (
             <div className="space-y-2">
               <img src={viewer.url} alt={viewer.alt_text} className="w-full rounded-lg" />
