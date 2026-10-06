@@ -94,7 +94,13 @@ Deno.serve(async (req) => {
         }
       },
     });
-    const headers: Record<string, string> = { ...corsHeaders, "Content-Type": "text/plain; charset=utf-8" };
+    // nosniff + no-transform stop mobile browsers/proxies from buffering the stream before showing text
+    const headers: Record<string, string> = {
+      ...corsHeaders,
+      "Content-Type": "text/plain; charset=utf-8",
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": "no-cache, no-transform",
+    };
     if (runId) headers["X-Lovable-AIG-Run-ID"] = runId;
     return new Response(stream, { headers });
   } catch (e) {
