@@ -64,9 +64,33 @@ export default function Journey() {
   const [viewer, setViewer] = useState<Img | null>(null);
   const [speakingId, setSpeakingId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [voiceOn, setVoiceOn] = useState(() => localStorage.getItem("tm-voice") !== "off");
+  const [sfxOn, setSfxOn] = useState(sfxIsOn);
+  const [listening, setListening] = useState(false);
+  const [handsFree, setHandsFree] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
-  const audioRef = useRef<{ stop: boolean; audio?: HTMLAudioElement } | null>(null);
+  const voiceOnRef = useRef(voiceOn);
+  const handsFreeRef = useRef(false);
+  const recRef = useRef<any>(null);
+  const sendRef = useRef<(t: string) => void>(() => {});
+  const startListeningRef = useRef<() => void>(() => {});
   const reduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  voiceOnRef.current = voiceOn;
+  handsFreeRef.current = handsFree;
+
+  // One voice queue for the guide (auto-speak while streaming + Listen buttons)
+  const voiceRef = useRef<VoiceQueue | null>(null);
+  if (!voiceRef.current) voiceRef.current = new VoiceQueue(fetchSpeech);
+  useEffect(() => {
+    const v = voiceRef.current!;
+    v.onState = (on, tag) => setSpeakingId(on ? tag : null);
+    v.onError = (msg) => toast.error(`Voice: ${msg}`);
+    v.onIdle = (tag) => {
+      if (tag === "live" && handsFreeRef.current) setTimeout(() => startListeningRef.current(), 350);
+    };
+    return () => { v.stop(); recRef.current?.abort?.(); };
+  }, []);
 
   // Auth guard
   useEffect(() => {
