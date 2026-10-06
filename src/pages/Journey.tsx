@@ -313,7 +313,7 @@ export default function Journey() {
       rec.onend = () => {
         setListening(false); recRef.current = null; sfx.micOff();
         const t = finalText.trim();
-        if (t) { setHandsFree(true); sendRef.current(t); }
+        if (t && !rec._cancel) { setHandsFree(true); sendRef.current(t); }
       };
       rec.start(); recRef.current = rec; setListening(true); sfx.micOn();
     } catch {
@@ -471,7 +471,7 @@ export default function Journey() {
                 <span className={`size-2 rounded-full bg-red-500 ${listening ? "animate-pulse" : "opacity-50"}`} />
                 {listening ? "Listening… speak to the guide, then pause." : "Conversation mode — the mic reopens after the guide finishes speaking."}
               </span>
-              <button type="button" className="underline opacity-80 hover:opacity-100" onClick={() => { setHandsFree(false); recRef.current?.abort?.(); }}>End</button>
+              <button type="button" className="underline opacity-80 hover:opacity-100" onClick={() => { setHandsFree(false); if (recRef.current) { recRef.current._cancel = true; recRef.current.abort?.(); } }}>End</button>
             </div>
           )}
           <div className="mx-auto flex max-w-3xl items-end gap-2">
