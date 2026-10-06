@@ -368,11 +368,24 @@ export default function Journey() {
             <SheetTrigger asChild><Button variant="ghost" size="icon" className="md:hidden" aria-label="Journeys"><Menu /></Button></SheetTrigger>
             <SheetContent side="left" className="w-72 p-0 bg-neutral-950 border-amber-500/20">{rail}</SheetContent>
           </Sheet>
-          <img src={GUIDE_IMG} alt="" className="size-9 rounded-full object-cover ring-2 ring-amber-500/60" />
-          <div className="min-w-0">
+          <img src={GUIDE_IMG} alt="" className={`size-9 shrink-0 rounded-full object-cover ring-2 ${speakingId ? "ring-red-500 animate-pulse" : "ring-amber-500/60"}`} />
+          <div className="min-w-0 flex-1">
             <h1 className="truncate text-sm font-semibold text-amber-300">Black History Matters Time Machine</h1>
-            <p className="truncate text-xs text-amber-100/60">{current?.title ?? "Guided by the Voice of the Dream"}</p>
+            <p className="truncate text-xs text-amber-100/60">{speakingId ? "The guide is speaking…" : current?.title ?? "Guided by the Voice of the Dream"}</p>
           </div>
+          {speakingId && (
+            <Button size="sm" variant="outline" className="h-9 shrink-0 px-2" onClick={() => voiceRef.current?.stop()} aria-label="Stop voice">
+              <Pause className="size-4 sm:mr-1" /><span className="hidden sm:inline">Stop voice</span>
+            </Button>
+          )}
+          <Button size="sm" variant="ghost" className="h-9 shrink-0 px-2" onClick={toggleVoice} aria-label={voiceOn ? "Turn guide voice off" : "Turn guide voice on"} title="Guide speaks replies aloud">
+            {voiceOn ? <Volume2 className="size-4 text-amber-300" /> : <VolumeX className="size-4 text-amber-100/50" />}
+            <span className="ml-1 hidden sm:inline">{voiceOn ? "Voice on" : "Voice off"}</span>
+          </Button>
+          <Button size="sm" variant="ghost" className="h-9 shrink-0 px-2" onClick={toggleSfx} aria-label={sfxOn ? "Turn sound effects off" : "Turn sound effects on"} title="Sound effects">
+            {sfxOn ? <Bell className="size-4 text-amber-300" /> : <BellOff className="size-4 text-amber-100/50" />}
+            <span className="ml-1 hidden sm:inline">Effects</span>
+          </Button>
         </header>
 
         <Conversation className="flex-1">
