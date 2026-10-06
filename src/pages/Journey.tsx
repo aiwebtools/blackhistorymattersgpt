@@ -465,15 +465,31 @@ export default function Journey() {
         </Conversation>
 
         <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="border-t border-amber-500/20 bg-black/50 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+          {(listening || handsFree) && (
+            <div className="mx-auto mb-2 flex max-w-3xl items-center justify-between gap-2 rounded-lg border border-red-500/30 bg-red-950/40 px-3 py-1.5 text-xs text-amber-100">
+              <span className="flex items-center gap-2">
+                <span className={`size-2 rounded-full bg-red-500 ${listening ? "animate-pulse" : "opacity-50"}`} />
+                {listening ? "Listening… speak to the guide, then pause." : "Conversation mode — the mic reopens after the guide finishes speaking."}
+              </span>
+              <button type="button" className="underline opacity-80 hover:opacity-100" onClick={() => { setHandsFree(false); recRef.current?.abort?.(); }}>End</button>
+            </div>
+          )}
           <div className="mx-auto flex max-w-3xl items-end gap-2">
+            <Button
+              type="button" size="icon" onClick={toggleMic} disabled={busy && !listening}
+              aria-label={listening ? "Stop listening" : "Speak to the guide"}
+              className={`h-11 w-11 shrink-0 ${listening ? "bg-red-600 hover:bg-red-500 text-white animate-pulse" : "bg-white/10 hover:bg-white/20 text-amber-200"}`}
+            >
+              {listening ? <MicOff className="size-5" /> : <Mic className="size-5" />}
+            </Button>
             <Textarea
               value={input} onChange={(e) => setInput(e.target.value)} rows={1}
               onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(input); } }}
-              placeholder={messages.length ? "Ask the guide, or say yes for 10 things to explore…" : "Or type your destination…"}
+              placeholder={listening ? "Listening…" : messages.length ? "Ask or speak to the guide…" : "Type or speak your destination…"}
               className="min-h-[44px] max-h-40 resize-none text-base"
             />
             {busy && abortRef.current ? (
-              <Button type="button" size="icon" className="h-11 w-11 shrink-0" onClick={() => abortRef.current?.abort()} aria-label="Stop"><Square className="size-4" /></Button>
+              <Button type="button" size="icon" className="h-11 w-11 shrink-0" onClick={() => { abortRef.current?.abort(); voiceRef.current?.stop(); }} aria-label="Stop"><Square className="size-4" /></Button>
             ) : (
               <Button type="submit" size="icon" disabled={busy || !input.trim()} className="h-11 w-11 shrink-0 bg-amber-500 hover:bg-amber-400 text-black" aria-label="Send"><Send className="size-4" /></Button>
             )}
