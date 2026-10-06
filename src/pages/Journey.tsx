@@ -10,7 +10,8 @@ import { Conversation, ConversationContent, ConversationScrollButton } from "@/c
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { toast } from "sonner";
-import { Menu, Plus, Trash2, Pencil, Send, Square, Volume2, Pause, Download, ImageIcon, Home, LogOut, Loader2 } from "lucide-react";
+import { Menu, Plus, Trash2, Pencil, Send, Square, Volume2, VolumeX, Pause, Download, ImageIcon, Home, LogOut, Loader2, Mic, MicOff, Bell, BellOff } from "lucide-react";
+import { VoiceQueue, sfx, sfxIsOn, setSfx, speakableBody, splitForSpeech, unlockAudio } from "@/lib/guideAudio";
 
 const OPENING =
   "Dear traveler of justice, what date in the long journey of our people do you wish to teleport to, and which Black land, ancient tribe, hidden legacy, or moment in our global struggle for freedom would you like to walk upon?";
@@ -40,14 +41,10 @@ async function authHeaders() {
 async function readError(res: Response) {
   try { const j = await res.json(); return j.error ?? `Error ${res.status}`; } catch { return `Error ${res.status}`; }
 }
-function chunkText(text: string, max = 2000) {
-  const clean = text.replace(/📖 Sources to explore:[\s\S]*$/, "").replace(/[#*_>`]/g, "");
-  const parts: string[] = []; let cur = "";
-  for (const p of clean.split(/\n+/)) {
-    if ((cur + "\n" + p).length > max && cur) { parts.push(cur); cur = p; } else cur = cur ? cur + "\n" + p : p;
-  }
-  if (cur.trim()) parts.push(cur);
-  return parts.flatMap((p) => (p.length > max ? p.match(new RegExp(`[\\s\\S]{1,${max}}`, "g"))! : [p]));
+async function fetchSpeech(text: string) {
+  const r = await fetch(`${FN}/journey-voice`, { method: "POST", headers: await authHeaders(), body: JSON.stringify({ text }) });
+  if (!r.ok) throw new Error(await readError(r));
+  return r.arrayBuffer();
 }
 
 export default function Journey() {
