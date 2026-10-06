@@ -131,6 +131,7 @@ export default function Journey() {
     if (!userId || !journeyId) return;
     let cancelled = false;
     setMessages([]); setImages([]); setStreaming(null); setDate(""); setPlace("");
+    voiceRef.current?.stop(); setHandsFree(false);
     (async () => {
       const [{ data: m }, { data: im }] = await Promise.all([
         supabase.from("journey_messages").select("id,role,content").eq("journey_id", journeyId).order("created_at"),
