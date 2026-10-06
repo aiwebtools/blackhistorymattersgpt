@@ -156,6 +156,7 @@ export default function Journey() {
       const { images: rows } = await res.json();
       const { data: signed } = await supabase.storage.from("journey-images").createSignedUrls(rows.map((r: any) => r.image_url), 60 * 60 * 24);
       setImages((prev) => [...prev, ...rows.map((r: any, k: number) => ({ id: r.id, message_id: r.message_id, alt_text: r.alt_text, url: signed?.[k]?.signedUrl ?? "" }))]);
+      sfx.imagesReady();
     } catch (e) {
       toast.error(`Images: ${(e as Error).message}`);
     } finally {
@@ -164,16 +165,22 @@ export default function Journey() {
   };
 
   const playRitual = () => new Promise<void>((resolve) => {
+    sfx.ritualStart();
     if (reduced) { setRitual(RITUAL.length - 1); setTimeout(() => { setRitual(-1); resolve(); }, 1200); return; }
-    let i = 0; setRitual(0);
+    let i = 0; setRitual(0); sfx.ritualTick();
     const t = setInterval(() => {
       i++;
-      if (i >= RITUAL.length + 1) { clearInterval(t); setRitual(-1); resolve(); } else setRitual(Math.min(i, RITUAL.length - 1));
+      if (i >= RITUAL.length + 1) { clearInterval(t); setRitual(-1); resolve(); }
+      else { setRitual(Math.min(i, RITUAL.length - 1)); sfx.ritualTick(); }
     }, 900);
   });
 
-  const send = async (text: string) => {
+  const send = async (text: string, viaVoice = false) => {
     if (!text.trim() || !journeyId || !userId || busy) return;
+    unlockAudio(); // must run inside the tap so the guide's voice may play later
+    if (!viaVoice) setHandsFree(false);
+    sfx.send();
+    voiceRef.current?.stop();
     setBusy(true); setInput("");
     const isFirst = messages.length === 0;
     const { data: um, error } = await supabase.from("journey_messages")
@@ -190,6 +197,29 @@ export default function Journey() {
 
     const ctrl = new AbortController(); abortRef.current = ctrl;
     let full = "";
+    // Speak the reply aloud while it streams, in order, paragraph by paragraph.
+    const voice = voiceRef.current!;
+    let spoken = 0;
+    let voiceStarted = false;
+    const feedVoice = (final: boolean) => {
+      if (!voiceOnRef.current) return;
+      if (!voiceStarted) { voice.begin("live"); voiceStarted = true; }
+      const body = speakableBody(full.replace(/\[\[ERROR:.*\]\]/, ""));
+      while (true) {
+        const rest = body.slice(spoken);
+        if (final) { if (rest.trim()) voice.enqueue(rest); spoken = body.length; voice.finish(); return; }
+        const min = spoken === 0 ? 260 : 900;
+        if (rest.length < min) return;
+        let cut = rest.indexOf("\n", min);
+        if (cut < 0 || cut > 1600) {
+          const s = rest.slice(min).search(/[.!?…]["”’)]?\s/);
+          cut = s >= 0 ? min + s + 1 : -1;
+        }
+        if (cut < 0) return;
+        voice.enqueue(rest.slice(0, cut));
+        spoken += cut;
+      }
+    };
     try {
       const res = await fetch(`${FN}/journey-chat`, {
         method: "POST", headers: await authHeaders(), signal: ctrl.signal,
@@ -199,11 +229,14 @@ export default function Journey() {
       await ritualP;
       setStreaming("");
       const reader = res.body.getReader(); const dec = new TextDecoder();
+      let first = true;
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         full += dec.decode(value, { stream: true });
+        if (first && full.trim()) { first = false; if (isFirst) sfx.arrival(); }
         setStreaming(full);
+        feedVoice(false);
       }
     } catch (e) {
       if ((e as Error).name !== "AbortError") toast.error((e as Error).message);
@@ -211,6 +244,7 @@ export default function Journey() {
     await ritualP;
     const errMatch = full.match(/\[\[ERROR:(.*)\]\]/);
     if (errMatch) { toast.error(errMatch[1]); full = full.replace(errMatch[0], "").trim(); }
+    if (ctrl.signal.aborted) voice.stop(); else if (full.trim()) feedVoice(true); else if (voiceStarted) voice.finish();
     setStreaming(null); abortRef.current = null;
     if (full.trim()) {
       const { data: am } = await supabase.from("journey_messages")
@@ -220,40 +254,75 @@ export default function Journey() {
         await supabase.from("journeys").update({ status: "arrived" }).eq("id", journeyId);
         if (full.length > 800) generateImages(am.id);
       }
+    } else if (!ctrl.signal.aborted && !errMatch) {
+      toast.error("The guide didn't answer this time. Please send your message again.");
     }
     setBusy(false);
   };
+  sendRef.current = (t: string) => send(t, true);
 
   const submitDestination = () => {
     if (!date.trim() || !place.trim()) return toast.error("Please choose both a date and a place.");
     send(`Take me to ${date.trim()} — ${place.trim()}.`);
   };
 
-  const speak = async (m: Msg) => {
-    if (speakingId === m.id) { if (audioRef.current) { audioRef.current.stop = true; audioRef.current.audio?.pause(); } setSpeakingId(null); return; }
-    if (audioRef.current) { audioRef.current.stop = true; audioRef.current.audio?.pause(); }
-    const ctl: { stop: boolean; audio?: HTMLAudioElement } = { stop: false }; audioRef.current = ctl;
-    setSpeakingId(m.id);
-    const chunks = chunkText(m.content);
-    let next: Promise<Blob> | null = null;
-    const fetchChunk = async (t: string) => {
-      const r = await fetch(`${FN}/journey-voice`, { method: "POST", headers: await authHeaders(), body: JSON.stringify({ text: t }) });
-      if (!r.ok) throw new Error(await readError(r));
-      return r.blob();
-    };
+  const speak = (m: Msg) => {
+    unlockAudio();
+    const v = voiceRef.current!;
+    if (speakingId === m.id) { v.stop(); return; }
+    v.begin(m.id);
+    splitForSpeech(m.content).forEach((c) => v.enqueue(c));
+    v.finish();
+  };
+
+  const toggleVoice = () => {
+    const on = !voiceOn;
+    setVoiceOn(on);
+    localStorage.setItem("tm-voice", on ? "on" : "off");
+    if (!on) voiceRef.current?.stop();
+    else unlockAudio();
+  };
+  const toggleSfx = () => { const on = !sfxOn; setSfxOn(on); setSfx(on); if (on) { unlockAudio(); sfx.send(); } };
+
+  // Talk to the guide: speech-to-text in the browser, sent automatically when you stop speaking.
+  const startListening = () => {
+    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SR) { toast.error("Voice input isn't available in this browser. Please try Chrome, Edge or Safari."); return; }
+    if (busy) return;
+    unlockAudio();
+    voiceRef.current?.stop();
+    let finalText = "";
     try {
-      next = fetchChunk(chunks[0]);
-      for (let i = 0; i < chunks.length && !ctl.stop; i++) {
-        const blob = await next!;
-        next = i + 1 < chunks.length ? fetchChunk(chunks[i + 1]) : null;
-        if (ctl.stop) break;
-        const url = URL.createObjectURL(blob);
-        const a = new Audio(url); ctl.audio = a;
-        await new Promise<void>((res) => { a.onended = () => res(); a.onpause = () => res(); a.play().catch(() => res()); });
-        URL.revokeObjectURL(url);
-      }
-    } catch (e) { toast.error(`Voice: ${(e as Error).message}`); }
-    if (audioRef.current === ctl) setSpeakingId(null);
+      const rec = new SR();
+      rec.lang = "en-US"; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
+      rec.onresult = (e: any) => {
+        let interim = "";
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const r = e.results[i];
+          if (r.isFinal) finalText += r[0].transcript; else interim += r[0].transcript;
+        }
+        setInput((finalText + " " + interim).trim());
+      };
+      rec.onerror = (e: any) => {
+        if (e.error === "not-allowed" || e.error === "service-not-allowed") {
+          setHandsFree(false);
+          toast.error("Microphone access is blocked. Allow the microphone for this site, then tap the mic again.");
+        } else if (e.error !== "no-speech" && e.error !== "aborted") toast.error(`Voice input: ${e.error}`);
+      };
+      rec.onend = () => {
+        setListening(false); recRef.current = null; sfx.micOff();
+        const t = finalText.trim();
+        if (t) { setHandsFree(true); sendRef.current(t); }
+      };
+      rec.start(); recRef.current = rec; setListening(true); sfx.micOn();
+    } catch {
+      setListening(false);
+    }
+  };
+  startListeningRef.current = startListening;
+  const toggleMic = () => {
+    if (listening) { setHandsFree(false); recRef.current?.stop(); return; }
+    startListening();
   };
 
   const rename = async (j: JourneyRow) => {
